@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Significant Figures"
+  site-url: "https://significantfigures.uk"
   navbar:
     left:
       - href: index.qmd
