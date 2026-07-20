@@ -46,7 +46,7 @@ def p1_stats(mask_name):
     return out
 
 def p1_traces(stats, visible=True):
-    ys = [f'{rg}<br><span style="font-size:11px;color:#898781">{stats[rg][3]:.2f}m</span>' for rg in REGIONS]
+    ys = [f'{("E of Eng & Wales" if rg=="East of England & Wales" else rg)}<br><span style="font-size:11px;color:#898781">{stats[rg][3]:.2f}m</span>' for rg in REGIONS]
     cx, cy = [], []
     for rg, y in zip(REGIONS, ys):
         ps, ls, gap, _ = stats[rg]
@@ -122,7 +122,8 @@ def p2_cell(rg, mask_name):
     return rows
 
 def build_part2(mask_name, title):
-    fig = make_subplots(rows=3, cols=2, subplot_titles=REGIONS + [''],
+    disp = ['E of Eng & Wales' if r=='East of England & Wales' else r for r in REGIONS]
+    fig = make_subplots(rows=3, cols=2, subplot_titles=disp + [''],
                         horizontal_spacing=0.13, vertical_spacing=0.10)
     order = list(reversed([b[1] for b in BANDS]))
     for i, rg in enumerate(REGIONS):
