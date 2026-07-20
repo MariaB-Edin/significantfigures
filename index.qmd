@@ -2,8 +2,6 @@
 title: "Significant Figures"
 ---
 
-# Significant Figures
-
 Headlines love a number. "Overrepresented." "Surging." "Widening." The figure gets repeated everywhere and checked almost nowhere.
 
 This site does the checking. Each post takes one claim you've probably seen, tracks down the public data behind it, and works through whether it holds up, showing every step so you can reproduce the answer or argue with it. 
