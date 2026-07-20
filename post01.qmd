@@ -1,0 +1,75 @@
+---
+title: "Overrepresented compared to whom?"
+subtitle: "Checking a common claim about higher education using only public census data"
+date: today
+---
+
+## The claim
+
+Official statistics report that women and most ethnic minority groups are a larger share of university students than of the general population. Women were 56.6% of first-degree undergraduates in 2021/22 ([Advance HE](https://advance-he.ac.uk/news-and-views/equality-higher-education-statistical-reports-2023/)). White pupils have the lowest higher-education entry rate of any broad ethnic group ([gov.uk ethnicity facts and figures](https://www.ethnicity-facts-figures.service.gov.uk/education-skills-and-training/higher-education/entry-rates-into-higher-education/latest), with more in the [House of Commons Library briefing](https://commonslibrary.parliament.uk/research-briefings/cbp-9195/)). In the press this becomes one line: women and non-white people are overrepresented in higher education.
+
+## The question
+
+"Overrepresented" only means something once you finish the sentence: overrepresented compared to whom? That comparison group is the benchmark, and the benchmark decides the answer. Students are young, and the young population is more ethnically diverse than the old. Compare students against the whole population and you can produce "overrepresentation" out of nothing but age. The honest comparison is against people of the same age.
+
+## How we check it
+
+We use one free public source: the England and Wales 2021 census. It records both the population and whether each person holds a degree-level qualification (Level 4 or above, which covers a degree and higher). For residents aged 22 to 24, we compare each group's share of the population with their share of the degree-level holders, region by region. If a group is a larger share of the holders than of the population, they are overrepresented, and the gap says by how much.
+
+We use ages 22 to 24 because most people on a standard degree have finished by 22, while the band still reflects recent cohorts. It slightly understates final attainment, since a few are still studying.
+
+## Getting the data
+
+On the ONS [Create a custom dataset](https://www.ons.gov.uk/datasets/create) tool: choose Usual residents, then add Highest level of qualification, Age, Sex and Ethnic group. Set Area type to Regions, Age to the 11 categories that include 22 to 24, and Ethnic group to 6 categories. Download the spreadsheet. This covers England and Wales; Scotland and Northern Ireland ran separate censuses, so adding them is possible but not needed for the point.
+
+## What it shows
+
+The hollow dot is each group's share of the population, the filled dot their share of degree-level holders, and the gap between them is the over or under-representation.
+
+### Gender 22-24 y olds
+
+::: {.column-page}
+```{=html}
+<iframe src="figures/fig_part1_sex.html" width="100%" height="380" style="border:none"></iframe>
+```
+:::
+
+Women are a larger share of degree-level holders than of the population in every region, by about 5 to 6 percentage points. Men are the exact mirror.
+
+### Ethnicity 22-24 y olds
+
+::: {.column-page}
+```{=html}
+<iframe src="figures/fig_part1_ethnicity.html" width="100%" height="380" style="border:none"></iframe>
+```
+:::
+
+For non-white residents the gap is smaller and it varies. It is positive in every region except London, where the two shares are level. So the claim holds in direction, but its size, and the London case, depend on where you look and which group. The non-white figure also includes international residents who came here to study, which lifts it.
+
+## And across age groups
+
+The same comparison, now with the population share as the line and each age band placed by how far it sits above or below it. The number by each dot is that band's share of degree holders.
+
+::: {.column-page}
+```{=html}
+<iframe src="figures/fig_part2_nonwhite.html" width="100%" height="820" style="border:none"></iframe>
+```
+:::
+
+::: {.column-page}
+```{=html}
+<iframe src="figures/fig_part2_women.html" width="100%" height="820" style="border:none"></iframe>
+```
+:::
+
+Both gaps ease toward the line in older cohorts, and in London the non-white gap crosses below it.
+
+## What to keep in mind
+
+The census measures who holds a degree, not who is enrolled today, and at 22 to 24 some are still studying. The non-white figure also includes international residents who came here to study, which lifts it.
+
+---
+
+*Reproducible from public data. The table is built from the 2021 Census of England and Wales through the ONS [Create a custom dataset](https://www.ons.gov.uk/datasets/create) tool, using the selections above.*
+
+*Doing it yourself. You do not need to be a programmer. With a current AI model (as of mid-2026) as your guide, install WSL on Windows, then Miniconda, Python and a few libraries; the model gives you the exact commands and fixes anything that breaks. Download the table from ONS, hand it to the model, and ask for a script that draws any view you want. On a Mac or Linux machine most of this is already in place.*

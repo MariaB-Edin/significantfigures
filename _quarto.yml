@@ -9,6 +9,10 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: post01.qmd
+        text: "Overrepresented compared to whom?"
+      - href: index.qmd
+        text: Home
       - about.qmd
 
 format:

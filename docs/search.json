@@ -11,6 +11,62 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "Significant Figures is about checking the numbers behind the headlines. Each post takes one such claim and works through it with public data, showing not just the answer but how it was reached, so you can reproduce or challenge every figure yourself.\nThe site is written by me, Maria Boutchkova, Lecturer in Finance at the University of Edinburgh."
+  },
+  {
+    "objectID": "post01.html",
+    "href": "post01.html",
+    "title": "Overrepresented compared to whom?",
+    "section": "",
+    "text": "Official statistics report that women and most ethnic minority groups are a larger share of university students than of the general population. Women were 56.6% of first-degree undergraduates in 2021/22 (Advance HE). White pupils have the lowest higher-education entry rate of any broad ethnic group (gov.uk ethnicity facts and figures, with more in the House of Commons Library briefing). In the press this becomes one line: women and non-white people are overrepresented in higher education."
+  },
+  {
+    "objectID": "post01.html#the-claim",
+    "href": "post01.html#the-claim",
+    "title": "Overrepresented compared to whom?",
+    "section": "",
+    "text": "Official statistics report that women and most ethnic minority groups are a larger share of university students than of the general population. Women were 56.6% of first-degree undergraduates in 2021/22 (Advance HE). White pupils have the lowest higher-education entry rate of any broad ethnic group (gov.uk ethnicity facts and figures, with more in the House of Commons Library briefing). In the press this becomes one line: women and non-white people are overrepresented in higher education."
+  },
+  {
+    "objectID": "post01.html#the-question",
+    "href": "post01.html#the-question",
+    "title": "Overrepresented compared to whom?",
+    "section": "The question",
+    "text": "The question\n“Overrepresented” only means something once you finish the sentence: overrepresented compared to whom? That comparison group is the benchmark, and the benchmark decides the answer. Students are young, and the young population is more ethnically diverse than the old. Compare students against the whole population and you can produce “overrepresentation” out of nothing but age. The honest comparison is against people of the same age."
+  },
+  {
+    "objectID": "post01.html#how-we-check-it",
+    "href": "post01.html#how-we-check-it",
+    "title": "Overrepresented compared to whom?",
+    "section": "How we check it",
+    "text": "How we check it\nWe use one free public source: the England and Wales 2021 census. It records both the population and whether each person holds a degree-level qualification (Level 4 or above, which covers a degree and higher). For residents aged 22 to 24, we compare each group’s share of the population with their share of the degree-level holders, region by region. If a group is a larger share of the holders than of the population, they are overrepresented, and the gap says by how much.\nWe use ages 22 to 24 because most people on a standard degree have finished by 22, while the band still reflects recent cohorts. It slightly understates final attainment, since a few are still studying."
+  },
+  {
+    "objectID": "post01.html#getting-the-data",
+    "href": "post01.html#getting-the-data",
+    "title": "Overrepresented compared to whom?",
+    "section": "Getting the data",
+    "text": "Getting the data\nOn the ONS Create a custom dataset tool: choose Usual residents, then add Highest level of qualification, Age, Sex and Ethnic group. Set Area type to Regions, Age to the 11 categories that include 22 to 24, and Ethnic group to 6 categories. Download the spreadsheet. This covers England and Wales; Scotland and Northern Ireland ran separate censuses, so adding them is possible but not needed for the point."
+  },
+  {
+    "objectID": "post01.html#what-it-shows",
+    "href": "post01.html#what-it-shows",
+    "title": "Overrepresented compared to whom?",
+    "section": "What it shows",
+    "text": "What it shows\nThe hollow dot is each group’s share of the population, the filled dot their share of degree-level holders, and the gap between them is the over or under-representation.\n\nGender 22-24 y olds\n\n\n\nWomen are a larger share of degree-level holders than of the population in every region, by about 5 to 6 percentage points. Men are the exact mirror.\n\n\nEthnicity 22-24 y olds\n\n\n\nFor non-white residents the gap is smaller and it varies. It is positive in every region except London, where the two shares are level. So the claim holds in direction, but its size, and the London case, depend on where you look and which group. The non-white figure also includes international residents who came here to study, which lifts it."
+  },
+  {
+    "objectID": "post01.html#and-across-age-groups",
+    "href": "post01.html#and-across-age-groups",
+    "title": "Overrepresented compared to whom?",
+    "section": "And across age groups",
+    "text": "And across age groups\nThe same comparison, now with the population share as the line and each age band placed by how far it sits above or below it. The number by each dot is that band’s share of degree holders.\n\n\n\n\n\n\nBoth gaps ease toward the line in older cohorts, and in London the non-white gap crosses below it."
+  },
+  {
+    "objectID": "post01.html#what-to-keep-in-mind",
+    "href": "post01.html#what-to-keep-in-mind",
+    "title": "Overrepresented compared to whom?",
+    "section": "What to keep in mind",
+    "text": "What to keep in mind\nThe census measures who holds a degree, not who is enrolled today, and at 22 to 24 some are still studying. The non-white figure also includes international residents who came here to study, which lifts it.\n\nReproducible from public data. The table is built from the 2021 Census of England and Wales through the ONS Create a custom dataset tool, using the selections above.\nDoing it yourself. You do not need to be a programmer. With a current AI model (as of mid-2026) as your guide, install WSL on Windows, then Miniconda, Python and a few libraries; the model gives you the exact commands and fixes anything that breaks. Download the table from ONS, hand it to the model, and ask for a script that draws any view you want. On a Mac or Linux machine most of this is already in place."
   }
 ]

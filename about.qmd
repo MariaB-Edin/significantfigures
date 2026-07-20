@@ -2,4 +2,6 @@
 title: "About"
 ---
 
-About this site
+Significant Figures is about checking the numbers behind the headlines. Each post takes one such claim and works through it with public data, showing not just the answer but how it was reached, so you can reproduce or challenge every figure yourself.
+
+The site is written by me, [Maria Boutchkova](https://www.business-school.ed.ac.uk/staff/maria-boutchkova), Lecturer in Finance at the University of Edinburgh.
