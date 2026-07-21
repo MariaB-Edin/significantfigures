@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit",
+      "Bash(quarto render:*)",
+      "Bash(quarto preview:*)",
+      "Bash(python build_figs.py:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(find:*)"
+    ]
+  }
+}
