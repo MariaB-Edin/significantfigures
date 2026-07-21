@@ -28,10 +28,14 @@ def base_layout(fig, height, title=None):
     fig.update_layout(
         font=dict(family=FONT, size=13, color='#33322e'),
         paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-        margin=dict(l=170, r=40, t=60 if title else 30, b=50),
+        margin=dict(l=170, r=40, t=60 if title else 30, b=65),
         height=height, showlegend=False,
         title=dict(text=title, x=0, xanchor='left', font=dict(size=15)) if title else None)
     return fig
+
+def caption_annotation(text):
+    return dict(x=0, y=-0.18, xref='paper', yref='paper', xanchor='left', yanchor='top',
+                text=text, showarrow=False, font=dict(size=11, color='#898781'))
 
 # ---------- PART 1: dumbbell, pop share vs L4+ share, by region (22-24) ----------
 def p1_stats(mask_name):
@@ -46,7 +50,7 @@ def p1_stats(mask_name):
     return out
 
 def p1_traces(stats, visible=True):
-    ys = [f'{("E of Eng & Wales" if rg=="East of England & Wales" else rg)}<br><span style="font-size:11px;color:#898781">{stats[rg][3]:.2f}m</span>' for rg in REGIONS]
+    ys = [f'{("East&Wls" if rg=="East of England & Wales" else rg)}<br><span style="font-size:11px;color:#898781">{stats[rg][3]:.2f}m</span>' for rg in REGIONS]
     cx, cy = [], []
     for rg, y in zip(REGIONS, ys):
         ps, ls, gap, _ = stats[rg]
@@ -87,15 +91,16 @@ def build_part1_sex():
     fig.add_vline(x=50, line=dict(color=BENCH, width=1, dash='dot'), opacity=0.5)
     fig.update_yaxes(categoryorder='array', categoryarray=list(reversed(ysw)),
                      showgrid=False, ticklabelposition='outside')
-    fig.update_layout(annotations=p1_annotations(w, ysw),
+    cap = caption_annotation('Number below region name = population count, ages 22–24, in that region')
+    fig.update_layout(annotations=p1_annotations(w, ysw) + [cap],
         updatemenus=[dict(type='buttons', direction='right', x=0, xanchor='left', y=1.12,
             buttons=[
                 dict(label='Women', method='update',
                      args=[{'visible':[True,True,True,False,False,False]},
-                           {'annotations':p1_annotations(w, ysw)}]),
+                           {'annotations':p1_annotations(w, ysw) + [cap]}]),
                 dict(label='Men', method='update',
                      args=[{'visible':[False,False,False,True,True,True]},
-                           {'annotations':p1_annotations(m, ysm)}]),
+                           {'annotations':p1_annotations(m, ysm) + [cap]}]),
             ])])
     return fig
 
@@ -107,7 +112,8 @@ def build_part1_ethnicity():
     fig.update_xaxes(range=[8, 52], ticksuffix='%', showgrid=True,
                      gridcolor='rgba(137,135,129,0.18)', zeroline=False)
     fig.update_yaxes(categoryorder='array', categoryarray=list(reversed(ys)), showgrid=False)
-    fig.update_layout(annotations=p1_annotations(nw, ys))
+    cap = caption_annotation('Number below region name = population count, ages 22–24, in that region')
+    fig.update_layout(annotations=p1_annotations(nw, ys) + [cap])
     return fig
 
 # ---------- PART 2: gap-only lollipop, by age band, per region ----------
@@ -122,12 +128,12 @@ def p2_cell(rg, mask_name):
     return rows
 
 def build_part2(mask_name, title):
-    disp = ['E of Eng & Wales' if r=='East of England & Wales' else r for r in REGIONS]
-    fig = make_subplots(rows=3, cols=2, subplot_titles=disp + [''],
-                        horizontal_spacing=0.13, vertical_spacing=0.10)
+    disp = ['East&Wls' if r=='East of England & Wales' else r for r in REGIONS]
+    fig = make_subplots(rows=5, cols=1, subplot_titles=disp,
+                        vertical_spacing=0.06)
     order = list(reversed([b[1] for b in BANDS]))
     for i, rg in enumerate(REGIONS):
-        r, c = i//2 + 1, i%2 + 1
+        r, c = i + 1, 1
         cell = p2_cell(rg, mask_name)
         sx, sy = [], []
         for lab, ls, gap in cell:
@@ -149,11 +155,9 @@ def build_part2(mask_name, title):
         fig.update_xaxes(range=[-5, 8.5], tickvals=[-4,0,4,8], row=r, col=c,
                          showgrid=True, gridcolor='rgba(137,135,129,0.15)', zeroline=False,
                          tickfont=dict(size=10))
-    # blank the empty 6th cell
-    fig.update_xaxes(visible=False, row=3, col=2); fig.update_yaxes(visible=False, row=3, col=2)
     fig.update_layout(font=dict(family=FONT, size=12, color='#33322e'),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-                      height=760, showlegend=False, margin=dict(l=60, r=30, t=70, b=40),
+                      height=1150, showlegend=False, margin=dict(l=60, r=30, t=70, b=40),
                       title=dict(text=title, x=0, xanchor='left', font=dict(size=15)))
     for a in fig.layout.annotations:
         a.font.size = 13
@@ -161,7 +165,7 @@ def build_part2(mask_name, title):
 
 def save(fig, name):
     fig.write_html(f'{OUT}/{name}.html', include_plotlyjs='cdn', full_html=True,
-                   config={'displayModeBar':False})
+                   config={'displayModeBar':False, 'responsive':True})
     try:
         fig.write_image(f'{OUT}/{name}.png', scale=2)
     except Exception as e:
