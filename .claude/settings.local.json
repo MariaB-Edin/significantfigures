@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Edit",
+      "Read",
       "Bash(quarto render:*)",
       "Bash(quarto preview:*)",
       "Bash(python build_figs.py:*)",
