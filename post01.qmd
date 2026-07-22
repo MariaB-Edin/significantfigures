@@ -50,9 +50,9 @@ For non-white residents the gap is smaller and it varies. It is positive in ever
 
 The same comparison, now with the population share as the line and each age band placed by how far it sits above or below it. The number by each dot is that band's share of degree holders.
 
-<iframe src="figures/fig_part2_nonwhite.html" width="100%" height="1180" style="border:none"></iframe>
+<iframe src="figures/fig_part2_nonwhite.html" width="100%" height="460" style="border:none"></iframe>
 
-<iframe src="figures/fig_part2_women.html" width="100%" height="1180" style="border:none"></iframe>
+<iframe src="figures/fig_part2_women.html" width="100%" height="460" style="border:none"></iframe>
 
 Both gaps ease toward the line in older cohorts, and in London the non-white gap crosses below it.
 

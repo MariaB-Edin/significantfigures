@@ -1,6 +1,5 @@
 import pandas as pd
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 
 SRC = 'data/census_2021_qual_region_age_sex_ethn.xlsx'
 OUT = 'figures'
@@ -116,7 +115,7 @@ def build_part1_ethnicity():
     fig.update_layout(annotations=p1_annotations(nw, ys) + [cap])
     return fig
 
-# ---------- PART 2: gap-only lollipop, by age band, per region ----------
+# ---------- PART 2: gap-only lollipop, by age band, one region at a time ----------
 def p2_cell(rg, mask_name):
     rows = []
     for ac, lab in BANDS:
@@ -127,40 +126,46 @@ def p2_cell(rg, mask_name):
         rows.append((lab, round(ls,1), round(ls-ps,1)))
     return rows
 
+def p2_traces(rg, mask_name, visible=True):
+    cell = p2_cell(rg, mask_name)
+    labs = [x[0] for x in cell]; l4s = [x[1] for x in cell]; gaps = [x[2] for x in cell]
+    sx, sy = [], []
+    for lab, ls, gap in cell:
+        sx += [0, gap, None]; sy += [lab, lab, None]
+    conn = go.Scatter(x=sx, y=sy, mode='lines', line=dict(color=BENCH, width=2),
+                      opacity=0.45, hoverinfo='skip', visible=visible)
+    tpos = ['middle right' if g >= 0 else 'middle left' for g in gaps]
+    pts = go.Scatter(x=gaps, y=labs, mode='markers+text',
+                     marker=dict(symbol='circle', size=11, color=OBS),
+                     text=[f'{v:.1f}' for v in l4s], textposition=tpos,
+                     textfont=dict(size=10, color='#33322e'), customdata=gaps,
+                     hovertemplate='%{y}: holds L4+ %{text}%, gap %{customdata:+.1f}pp<extra></extra>',
+                     visible=visible)
+    return [conn, pts]
+
 def build_part2(mask_name, title):
-    disp = ['East&Wls' if r=='East of England & Wales' else r for r in REGIONS]
-    fig = make_subplots(rows=5, cols=1, subplot_titles=disp,
-                        vertical_spacing=0.06)
     order = list(reversed([b[1] for b in BANDS]))
+    traces = []
     for i, rg in enumerate(REGIONS):
-        r, c = i + 1, 1
-        cell = p2_cell(rg, mask_name)
-        sx, sy = [], []
-        for lab, ls, gap in cell:
-            sx += [0, gap, None]; sy += [lab, lab, None]
-        fig.add_trace(go.Scatter(x=sx, y=sy, mode='lines',
-                      line=dict(color=BENCH, width=2), opacity=0.45, hoverinfo='skip'), row=r, col=c)
-        labs = [x[0] for x in cell]; gaps = [x[2] for x in cell]; l4s = [x[1] for x in cell]
-        tpos = ['middle right' if g >= 0 else 'middle left' for g in gaps]
-        fig.add_trace(go.Scatter(x=gaps, y=labs, mode='markers+text',
-                      marker=dict(symbol='circle', size=11, color=OBS),
-                      text=[f'{v:.1f}' for v in l4s], textposition=tpos,
-                      textfont=dict(size=10, color='#33322e'),
-                      customdata=gaps,
-                      hovertemplate='%{y}: holds L4+ %{text}%, gap %{customdata:+.1f}pp<extra></extra>'),
-                      row=r, col=c)
-        fig.add_vline(x=0, line=dict(color=BENCH, width=1.4), opacity=0.8, row=r, col=c)
-        fig.update_yaxes(categoryorder='array', categoryarray=order, row=r, col=c,
-                         showgrid=False, tickfont=dict(size=11))
-        fig.update_xaxes(range=[-5, 8.5], tickvals=[-4,0,4,8], row=r, col=c,
-                         showgrid=True, gridcolor='rgba(137,135,129,0.15)', zeroline=False,
-                         tickfont=dict(size=10))
-    fig.update_layout(font=dict(family=FONT, size=12, color='#33322e'),
+        traces += p2_traces(rg, mask_name, visible=(i == 0))
+    fig = go.Figure(traces)
+    n = len(REGIONS)
+    buttons = []
+    for i, rg in enumerate(REGIONS):
+        vis = [False] * (2 * n)
+        vis[2*i], vis[2*i+1] = True, True
+        label = 'East&Wls' if rg == 'East of England & Wales' else rg
+        buttons.append(dict(label=label, method='update', args=[{'visible': vis}]))
+    fig.add_vline(x=0, line=dict(color=BENCH, width=1.4), opacity=0.8)
+    fig.update_xaxes(range=[-5, 8.5], tickvals=[-4,0,4,8], showgrid=True,
+                     gridcolor='rgba(137,135,129,0.15)', zeroline=False, tickfont=dict(size=11))
+    fig.update_yaxes(categoryorder='array', categoryarray=order, showgrid=False, tickfont=dict(size=12))
+    fig.update_layout(font=dict(family=FONT, size=13, color='#33322e'),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-                      height=1150, showlegend=False, margin=dict(l=60, r=30, t=70, b=40),
-                      title=dict(text=title, x=0, xanchor='left', font=dict(size=15)))
-    for a in fig.layout.annotations:
-        a.font.size = 13
+                      height=420, showlegend=False, margin=dict(l=70, r=40, t=70, b=50),
+                      title=dict(text=title, x=0, xanchor='left', font=dict(size=15)),
+                      updatemenus=[dict(type='buttons', direction='right', x=0, xanchor='left', y=1.15,
+                                        buttons=buttons)])
     return fig
 
 def save(fig, name):
