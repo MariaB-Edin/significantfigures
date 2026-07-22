@@ -54,8 +54,8 @@ dr['l4'] = (dr.q_c == 4)
 dr = dr[~dr.lor_c.isin([4, 5])]
 
 REGIONS = ['London','Midlands','South','North','East of England & Wales']
-BANDS = [(4,'20-21'),(5,'22-24'),(6,'25-29'),(7,'30-34'),(8,'35-39'),
-         (9,'40-44'),(10,'45-49'),(11,'50+')]
+BANDS = [([2,3],'16-19'),(4,'20-21'),(5,'22-24'),(6,'25-29'),(7,'30-34'),
+         (8,'35-39'),(9,'40-44'),(10,'45-49'),(11,'50+')]
 
 def base_layout(fig, height, title=None):
     fig.update_layout(
@@ -66,9 +66,12 @@ def base_layout(fig, height, title=None):
         title=dict(text=title, x=0, xanchor='left', font=dict(size=15)) if title else None)
     return fig
 
-def caption_annotation(text):
-    return dict(x=0, y=-0.18, xref='paper', yref='paper', xanchor='left', yanchor='top',
-                text=text, showarrow=False, font=dict(size=11, color='#898781'))
+def caption_annotation(text, width=None):
+    ann = dict(x=0, y=-0.18, xref='paper', yref='paper', xanchor='left', yanchor='top',
+               text=text, showarrow=False, font=dict(size=11, color='#898781'), align='left')
+    if width:
+        ann['width'] = width
+    return ann
 
 # ---------- PART 1: dumbbell, pop share vs L4+ share, by region (22-24) ----------
 def p1_stats(frame, mask_name):
@@ -79,11 +82,11 @@ def p1_stats(frame, mask_name):
         m = s.nonwhite if mask_name=='nonwhite' else (s.sex==mask_name)
         ps = 100*s.loc[m,'n'].sum()/tot
         ls = 100*s.loc[m & s.l4,'n'].sum()/l4
-        out[rg] = (round(ps,1), round(ls,1), round(ls-ps,1), tot/1e6)
+        out[rg] = (round(ps,1), round(ls,1), round(ls-ps,1), tot/1e3)
     return out
 
 def p1_traces(stats, visible=True):
-    ys = [f'{("East&Wls" if rg=="East of England & Wales" else rg)}<br><span style="font-size:11px;color:#898781">{stats[rg][3]:.2f}m</span>' for rg in REGIONS]
+    ys = [f'{("East&Wls" if rg=="East of England & Wales" else rg)}<br><span style="font-size:11px;color:#898781">{stats[rg][3]:.0f}k</span>' for rg in REGIONS]
     cx, cy = [], []
     for rg, y in zip(REGIONS, ys):
         ps, ls, gap, _ = stats[rg]
@@ -153,19 +156,20 @@ def build_part1_ethnicity():
 # ---------- PART 2: gap-only lollipop, by age band, one region at a time ----------
 def p2_cell(frame, rg, mask_name):
     rows = []
-    for ac, lab in BANDS:
-        s = frame[(frame.g==rg) & (frame.age_c==ac)]; tot = s.n.sum(); l4 = s.loc[s.l4,'n'].sum()
+    for acs, lab in BANDS:
+        ac_list = acs if isinstance(acs, list) else [acs]
+        s = frame[(frame.g==rg) & (frame.age_c.isin(ac_list))]
+        tot = s.n.sum(); l4 = s.loc[s.l4,'n'].sum()
         m = s.nonwhite if mask_name=='nonwhite' else (s.sex=='Female')
         ps = 100*s.loc[m,'n'].sum()/tot
         ls = 100*s.loc[m & s.l4,'n'].sum()/l4
-        rows.append((lab, round(ls,1), round(ls-ps,1)))
+        rows.append((lab, round(ls,1), round(ls-ps,1), tot))
     return rows
 
-def p2_traces(frame, rg, mask_name, visible=True):
-    cell = p2_cell(frame, rg, mask_name)
+def p2_traces(cell, visible=True):
     labs = [x[0] for x in cell]; l4s = [x[1] for x in cell]; gaps = [x[2] for x in cell]
     sx, sy = [], []
-    for lab, ls, gap in cell:
+    for lab, ls, gap, tot in cell:
         sx += [0, gap, None]; sy += [lab, lab, None]
     conn = go.Scatter(x=sx, y=sy, mode='lines', line=dict(color=BENCH, width=2),
                       opacity=0.45, hoverinfo='skip', visible=visible)
@@ -178,11 +182,17 @@ def p2_traces(frame, rg, mask_name, visible=True):
                      visible=visible)
     return [conn, pts]
 
+def p2_ticktext(cell, order):
+    counts = {lab: tot for lab, ls, gap, tot in cell}
+    return [f'{lab}<br><span style="font-size:10px;color:#898781">{counts[lab]/1e3:.0f}k</span>' for lab in order]
+
 def build_part2(frame, mask_name, title):
     order = list(reversed([b[1] for b in BANDS]))
-    traces = []
+    traces, ticktexts = [], []
     for i, rg in enumerate(REGIONS):
-        traces += p2_traces(frame, rg, mask_name, visible=(i == 0))
+        cell = p2_cell(frame, rg, mask_name)
+        traces += p2_traces(cell, visible=(i == 0))
+        ticktexts.append(p2_ticktext(cell, order))
     fig = go.Figure(traces)
     n = len(REGIONS)
     buttons = []
@@ -190,16 +200,22 @@ def build_part2(frame, mask_name, title):
         vis = [False] * (2 * n)
         vis[2*i], vis[2*i+1] = True, True
         label = 'East&Wls' if rg == 'East of England & Wales' else rg
-        buttons.append(dict(label=label, method='update', args=[{'visible': vis}]))
+        buttons.append(dict(label=label, method='update',
+                            args=[{'visible': vis}, {'yaxis.ticktext': ticktexts[i]}]))
     fig.add_vline(x=0, line=dict(color=BENCH, width=1.4), opacity=0.8)
-    fig.update_xaxes(range=[-5, 8.5], tickvals=[-4,0,4,8], showgrid=True,
+    fig.update_xaxes(range=[-5, 11], tickvals=[-4,0,4,8], showgrid=True,
                      gridcolor='rgba(137,135,129,0.15)', zeroline=False, tickfont=dict(size=11))
-    fig.update_yaxes(categoryorder='array', categoryarray=order, showgrid=False, tickfont=dict(size=12))
+    fig.update_yaxes(categoryorder='array', categoryarray=order, showgrid=False, tickfont=dict(size=12),
+                     tickmode='array', tickvals=order, ticktext=ticktexts[0])
+    cap = caption_annotation("Dot position = gap in percentage points from the population share (line at 0).<br>"
+                             "Number by dot = that age band's share of Level 4+ holders.<br>"
+                             "Number below age label = population count for that band and region, in '000s.")
     fig.update_layout(font=dict(family=FONT, size=13, color='#33322e'),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-                      height=430, showlegend=False, margin=dict(l=70, r=40, t=85, b=50),
+                      height=560, showlegend=False, margin=dict(l=70, r=40, t=85, b=130),
                       title=dict(text=title, x=0, xanchor='left', y=1, yanchor='bottom',
                                  yref='paper', pad=dict(b=45), font=dict(size=15)),
+                      annotations=[cap],
                       updatemenus=[dict(type='buttons', direction='right', x=0, xanchor='left', y=1.13,
                                         buttons=buttons)])
     return fig
