@@ -1,23 +1,57 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-SRC = 'data/census_2021_qual_region_age_sex_ethn.xlsx'
+SRC_A = 'data/census_2021_qual_region_age_sex_ethn.xlsx'
+SRC_B = 'data/census_2021_yrs_resid_qual_region_age_ethn.xlsx'
 OUT = 'figures'
 
 BENCH = '#898781'   # population share (benchmark)
 OBS   = '#2a78d6'   # share holding Level 4+ (observed)
 FONT  = 'Inter, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif'
 
-df = pd.read_excel(SRC, sheet_name='Dataset')
-df.columns = ['reg_c','reg','q_c','q','age_c','age','sex_c','sex','eth_c','eth','n']
+BASES = {
+    'Regions': ('reg_c', 'reg'),
+    'Highest level of qualification': ('q_c', 'q'),
+    'Age (B)': ('age_c', 'age'),
+    'Sex': ('sex_c', 'sex'),
+    'Ethnic group': ('eth_c', 'eth'),
+    'Length of residence in the UK': ('lor_c', 'lor'),
+}
+
+def rename_by_prefix(df):
+    cols = []
+    for col in df.columns:
+        if col == 'Observation':
+            cols.append('n'); continue
+        for base, (c_code, c_val) in BASES.items():
+            if col.startswith(base):
+                cols.append(c_code if col.endswith('Code') else c_val)
+                break
+        else:
+            raise ValueError(f'unmatched column: {col}')
+    df = df.copy()
+    df.columns = cols
+    return df
+
 grp = {'London':'London','East Midlands':'Midlands','West Midlands':'Midlands',
        'South East':'South','South West':'South','North East':'North','North West':'North',
        'Yorkshire and The Humber':'North','East of England':'East of England & Wales',
        'Wales':'East of England & Wales'}
+
+df = rename_by_prefix(pd.read_excel(SRC_A, sheet_name='Dataset'))
 df['g'] = df.reg.map(grp)
 d = df[(df.q_c != -8) & (df.eth_c != -8)].copy()
 d['nonwhite'] = (d.eth_c != 4)
 d['l4'] = (d.q_c == 4)
+
+# File B: same population, split by length of residence instead of sex.
+# Used for the ethnicity figures so the main claim excludes recent arrivals.
+dfb = rename_by_prefix(pd.read_excel(SRC_B, sheet_name='Dataset'))
+dfb['g'] = dfb.reg.map(grp)
+dr = dfb[(dfb.q_c != -8) & (dfb.eth_c != -8)].copy()
+dr['nonwhite'] = (dr.eth_c != 4)
+dr['l4'] = (dr.q_c == 4)
+dr = dr[~dr.lor_c.isin([4, 5])]
 
 REGIONS = ['London','Midlands','South','North','East of England & Wales']
 BANDS = [(4,'20-21'),(5,'22-24'),(6,'25-29'),(7,'30-34'),(8,'35-39'),
@@ -37,8 +71,8 @@ def caption_annotation(text):
                 text=text, showarrow=False, font=dict(size=11, color='#898781'))
 
 # ---------- PART 1: dumbbell, pop share vs L4+ share, by region (22-24) ----------
-def p1_stats(mask_name):
-    b = d[d.age_c == 5]
+def p1_stats(frame, mask_name):
+    b = frame[frame.age_c == 5]
     out = {}
     for rg in REGIONS:
         s = b[b.g == rg]; tot = s.n.sum(); l4 = s.loc[s.l4,'n'].sum()
@@ -80,7 +114,7 @@ def p1_annotations(stats, ys):
     return ann
 
 def build_part1_sex():
-    w, m = p1_stats('Female'), p1_stats('Male')
+    w, m = p1_stats(d, 'Female'), p1_stats(d, 'Male')
     ysw, tw = p1_traces(w, True)
     ysm, tm = p1_traces(m, False)
     fig = go.Figure(tw + tm)
@@ -104,30 +138,31 @@ def build_part1_sex():
     return fig
 
 def build_part1_ethnicity():
-    nw = p1_stats('nonwhite')
+    nw = p1_stats(dr, 'nonwhite')
     ys, tr = p1_traces(nw, True)
     fig = go.Figure(tr)
     base_layout(fig, 360)
     fig.update_xaxes(range=[8, 52], ticksuffix='%', showgrid=True,
                      gridcolor='rgba(137,135,129,0.18)', zeroline=False)
     fig.update_yaxes(categoryorder='array', categoryarray=list(reversed(ys)), showgrid=False)
-    cap = caption_annotation('Number below region name = population count, ages 22–24, in that region')
+    cap = caption_annotation('Number below region name = population count, ages 22–24, '
+                             'excluding arrivals within the previous five years')
     fig.update_layout(annotations=p1_annotations(nw, ys) + [cap])
     return fig
 
 # ---------- PART 2: gap-only lollipop, by age band, one region at a time ----------
-def p2_cell(rg, mask_name):
+def p2_cell(frame, rg, mask_name):
     rows = []
     for ac, lab in BANDS:
-        s = d[(d.g==rg) & (d.age_c==ac)]; tot = s.n.sum(); l4 = s.loc[s.l4,'n'].sum()
+        s = frame[(frame.g==rg) & (frame.age_c==ac)]; tot = s.n.sum(); l4 = s.loc[s.l4,'n'].sum()
         m = s.nonwhite if mask_name=='nonwhite' else (s.sex=='Female')
         ps = 100*s.loc[m,'n'].sum()/tot
         ls = 100*s.loc[m & s.l4,'n'].sum()/l4
         rows.append((lab, round(ls,1), round(ls-ps,1)))
     return rows
 
-def p2_traces(rg, mask_name, visible=True):
-    cell = p2_cell(rg, mask_name)
+def p2_traces(frame, rg, mask_name, visible=True):
+    cell = p2_cell(frame, rg, mask_name)
     labs = [x[0] for x in cell]; l4s = [x[1] for x in cell]; gaps = [x[2] for x in cell]
     sx, sy = [], []
     for lab, ls, gap in cell:
@@ -143,11 +178,11 @@ def p2_traces(rg, mask_name, visible=True):
                      visible=visible)
     return [conn, pts]
 
-def build_part2(mask_name, title):
+def build_part2(frame, mask_name, title):
     order = list(reversed([b[1] for b in BANDS]))
     traces = []
     for i, rg in enumerate(REGIONS):
-        traces += p2_traces(rg, mask_name, visible=(i == 0))
+        traces += p2_traces(frame, rg, mask_name, visible=(i == 0))
     fig = go.Figure(traces)
     n = len(REGIONS)
     buttons = []
@@ -180,6 +215,6 @@ def save(fig, name):
 if __name__ == '__main__':
     save(build_part1_sex(),        'fig_part1_sex')
     save(build_part1_ethnicity(),  'fig_part1_ethnicity')
-    save(build_part2('nonwhite',   'Non-white residents: over/under-representation among Level&nbsp;4+ holders, by age'), 'fig_part2_nonwhite')
-    save(build_part2('Female',     'Women: over/under-representation among Level&nbsp;4+ holders, by age'), 'fig_part2_women')
+    save(build_part2(dr, 'nonwhite', 'Non-white residents: over/under-representation among Level&nbsp;4+ holders, by age'), 'fig_part2_nonwhite')
+    save(build_part2(d, 'Female',     'Women: over/under-representation among Level&nbsp;4+ holders, by age'), 'fig_part2_women')
     print('done')

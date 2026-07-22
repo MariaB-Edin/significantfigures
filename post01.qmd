@@ -16,11 +16,19 @@ Official statistics report that women and most ethnic minority groups are a larg
 
 We use one free public source: the England and Wales 2021 census. It records both the population and whether each person holds a degree-level qualification (Level 4 or above, which covers a degree and higher). For residents aged 22 to 24, we compare each group's share of the population with their share of the degree-level holders, region by region. If a group is a larger share of the holders than of the population, they are overrepresented, and the gap says by how much.
 
-We use ages 22 to 24 because most people on a standard degree have finished by 22, while the band still reflects recent cohorts. It slightly understates final attainment, since a few are still studying.
+Two choices define the comparison group. Age: 22 to 24, because most people on a standard degree have finished by 22 and the band still reflects recent cohorts. Residence: about one in ten residents that age arrived in the UK within the previous five years, one in five in London. Include them and the count covers everyone now living here who holds a degree, wherever they earned it. Exclude them and it covers only people who were already here when the decision to go to university was made. The claim is about British higher education, so the main figures exclude recent arrivals. Where including them would change the answer, we say so.
 
 ## Getting the data
 
-On the ONS [Create a custom dataset](https://www.ons.gov.uk/datasets/create) tool: choose Usual residents, then add Highest level of qualification, Age, Sex and Ethnic group. Set Area type to Regions, Age to the 11 categories that include 22 to 24, and Ethnic group to 6 categories. Download the spreadsheet. This covers England and Wales; Scotland and Northern Ireland ran separate censuses, so adding them is possible but not needed for the point.
+On the ONS [Create a custom dataset](https://www.ons.gov.uk/datasets/create) tool, choose Usual residents and set Area type to Regions. Two downloads are needed.
+
+First, add Highest level of qualification, Age, Sex and Ethnic group. Set Age to the categories that include 22 to 24 and Ethnic group to 6 categories. This gives the sex panel and the unadjusted ethnicity figures.
+
+Second, repeat with Length of residence in the UK in place of Sex. This gives the same table split by how long each resident has been in the country.
+
+They have to be separate because ONS suppresses cells small enough to identify individuals. Asking for all five variables at once thins the table until half the regions are withheld. Five variables clear where six do not, so sex and residence are collected in turn rather than together.
+
+This covers England and Wales. Scotland and Northern Ireland ran separate censuses and can be incorporated but it is unnecessary for our purposes.
 
 ## What it shows
 
@@ -36,6 +44,8 @@ The hollow dot is each group's share of the population, the filled dot their sha
 
 Women are a larger share of degree-level holders than of the population in every region, by about 5 to 6 percentage points. Men are the exact mirror.
 
+The sex figures come from the first download and so cover all residents. Applying the residence filter moves the women's gap from +5.8 to +6.1 points, which changes nothing.
+
 ### Ethnicity 22-24 y olds
 
 ::: {.column-page}
@@ -44,7 +54,9 @@ Women are a larger share of degree-level holders than of the population in every
 ```
 :::
 
-For non-white residents the gap is smaller and it varies. It is positive in every region except London, where the two shares are level. So the claim holds in direction, but its size, and the London case, depend on where you look and which group. The non-white figure also includes international residents who came here to study, which lifts it.
+Non-white residents are a larger share of degree-level holders than of the population everywhere except London, from 2.8 points in the North to 5.1 in the Midlands, against 4.6 for England and Wales. London is the exception at -1.1.
+
+Counting recent arrivals too adds between 0.6 and 1.2 points, most of it in the Asian group, and moves London from -1.1 to roughly level. No group changes sign.
 
 ## And across age groups
 
@@ -54,14 +66,20 @@ The same comparison, now with the population share as the line and each age band
 
 <iframe src="figures/fig_part2_women.html" width="100%" height="470" style="border:none"></iframe>
 
-Both gaps ease toward the line in older cohorts, and in London the non-white gap crosses below it.
+Both gaps ease toward the line in older cohorts. London runs differently: the non-white gap is positive only among 20 to 21 year olds, drops below the line at 22 to 24 and stays there through 45 to 49, and turns marginally positive again only in the over-50s.
 
 ## What to keep in mind
 
-The census measures who holds a degree, not who is enrolled today, and at 22 to 24 some are still studying. The non-white figure also includes international residents who came here to study, which lifts it.
+The census measures who holds a degree, not who is enrolled today, and at 22 to 24 some are still studying.
+
+## What we learned
+
+For women, the claim holds without qualification. Women aged 22 to 24 are a larger share of degree-level holders than of the resident population in every region, by roughly 5 to 6 points, and it persists in weaker form in older age bands.
+
+For ethnicity, it holds in direction but not uniformly. Among residents already here five years before the census, non-white people aged 22 to 24 are overrepresented everywhere except London, where they are slightly underrepresented. The gaps run 2.8 to 5.1 points and narrow in older cohorts. Recent arrivals lift these figures, but by less than one might worry, and in London by enough to close the gap.
 
 ---
 
-*Reproducible from public data. The table is built from the 2021 Census of England and Wales through the ONS [Create a custom dataset](https://www.ons.gov.uk/datasets/create) tool, using the selections above.*
+*Reproducible from public data. The tables are built from the 2021 Census of England and Wales through the ONS [Create a custom dataset](https://www.ons.gov.uk/datasets/create) tool, using the selections above.*
 
-*Doing it yourself. You do not need to be a programmer. With a current AI model (as of mid-2026) as your guide, install WSL on Windows, then Miniconda, Python and a few libraries; the model gives you the exact commands and fixes anything that breaks. Download the table from ONS, hand it to the model, and ask for a script that draws any view you want. On a Mac or Linux machine most of this is already in place.*
+*Doing it yourself. You do not need to be a programmer. With a current AI model (as of mid-2026) as your guide, install WSL on Windows, then Miniconda, Python and a few libraries; the model gives you the exact commands and fixes anything that breaks. Download the table from ONS, hand it to the model, and ask for a script that draws any visualization you want. On a Mac or Linux machine most of this is already in place.*
