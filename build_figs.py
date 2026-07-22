@@ -212,11 +212,11 @@ def build_part2(frame, mask_name, title):
                              "Number below age label = population count for that band and region, in '000s.")
     fig.update_layout(font=dict(family=FONT, size=13, color='#33322e'),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-                      height=560, showlegend=False, margin=dict(l=70, r=40, t=85, b=130),
+                      height=580, showlegend=False, margin=dict(l=70, r=40, t=105, b=130),
                       title=dict(text=title, x=0, xanchor='left', y=1, yanchor='bottom',
-                                 yref='paper', pad=dict(b=45), font=dict(size=15)),
+                                 yref='paper', pad=dict(b=70), font=dict(size=15)),
                       annotations=[cap],
-                      updatemenus=[dict(type='buttons', direction='right', x=0, xanchor='left', y=1.13,
+                      updatemenus=[dict(type='buttons', direction='right', x=0, xanchor='left', y=1.18,
                                         buttons=buttons)])
     return fig
 
