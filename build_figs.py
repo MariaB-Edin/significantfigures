@@ -162,9 +162,10 @@ def build_part2(mask_name, title):
     fig.update_yaxes(categoryorder='array', categoryarray=order, showgrid=False, tickfont=dict(size=12))
     fig.update_layout(font=dict(family=FONT, size=13, color='#33322e'),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-                      height=420, showlegend=False, margin=dict(l=70, r=40, t=70, b=50),
-                      title=dict(text=title, x=0, xanchor='left', font=dict(size=15)),
-                      updatemenus=[dict(type='buttons', direction='right', x=0, xanchor='left', y=1.15,
+                      height=430, showlegend=False, margin=dict(l=70, r=40, t=85, b=50),
+                      title=dict(text=title, x=0, xanchor='left', y=1, yanchor='bottom',
+                                 yref='paper', pad=dict(b=45), font=dict(size=15)),
+                      updatemenus=[dict(type='buttons', direction='right', x=0, xanchor='left', y=1.13,
                                         buttons=buttons)])
     return fig
 
