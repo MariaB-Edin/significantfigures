@@ -2,6 +2,11 @@
 title: "About"
 ---
 
-Significant Figures is about checking the numbers behind the headlines. Each post takes one such claim and works through it with public data, showing not just the answer but how it was reached, so you can reproduce or challenge every figure yourself.
+Significant Figures is about checking the numbers behind the headlines. Each post takes one such claim and works through it with public data, showing not just the answer but how it was reached, so you can reproduce or challenge every figure yourself. 
+
+Other fact checking public service sources of the highest integrity: BBC podcast [More or Less](https://www.bbc.co.uk/programmes/b006qshd), The Economist [Graphic detail](https://www.economist.com/topics/graphic-detail) section (paywall), [Full Fact](https://fullfact.org/), [Reuters Fact Check](https://www.reuters.com/fact-check/). Full location-specific [list](https://en.wikipedia.org/wiki/List_of_fact-checking_websites).
 
 The site is written by me, [Maria Boutchkova](https://www.business-school.ed.ac.uk/staff/maria-boutchkova), Lecturer in Finance at the University of Edinburgh.
+
+Domain name coincidentally identical and not related to the 2017 book [Significant Figures](https://en.wikipedia.org/wiki/Significant_Figures_(book)): The Lives and Work of Great Mathematicians by British mathematician Ian Stewart, FRS CMath FIMA.
+

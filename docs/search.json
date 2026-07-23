@@ -1,5 +1,82 @@
 [
   {
+    "objectID": "post02.html",
+    "href": "post02.html",
+    "title": "The role of the denominator",
+    "section": "",
+    "text": "In March 2023 the Home Office published a note correcting its own numbers. The 2021 census had arrived, and the department recalculated stop and search disparity using the new population figures instead of the 2011 ones. The rate at which black people were searched relative to white people fell from 6.2 times to 4.8. No policing had changed. The searches were the same searches. Only the population they were divided by had been updated.\nThat note is trasparent, but it stops one step short. A rate is a fraction, and almost all public argument concerns the top of it. The bottom gets treated as a fact you look up rather than a choice you make. But you choose which census, whether the population at risk is everyone alive or only the ages the power is used on, and whether to compare people in the same part of the country or pool the lot.\nThis post holds the numerator completely still: the same seventeen years of recorded searches throughout. Then it changes the denominator four ways. No modelling, no adjustment for anything unobserved. Division."
+  },
+  {
+    "objectID": "post02.html#intro",
+    "href": "post02.html#intro",
+    "title": "The role of the denominator",
+    "section": "",
+    "text": "In March 2023 the Home Office published a note correcting its own numbers. The 2021 census had arrived, and the department recalculated stop and search disparity using the new population figures instead of the 2011 ones. The rate at which black people were searched relative to white people fell from 6.2 times to 4.8. No policing had changed. The searches were the same searches. Only the population they were divided by had been updated.\nThat note is trasparent, but it stops one step short. A rate is a fraction, and almost all public argument concerns the top of it. The bottom gets treated as a fact you look up rather than a choice you make. But you choose which census, whether the population at risk is everyone alive or only the ages the power is used on, and whether to compare people in the same part of the country or pool the lot.\nThis post holds the numerator completely still: the same seventeen years of recorded searches throughout. Then it changes the denominator four ways. No modelling, no adjustment for anything unobserved. Division."
+  },
+  {
+    "objectID": "post02.html#what-the-pyramids-already-tell-you",
+    "href": "post02.html#what-the-pyramids-already-tell-you",
+    "title": "The role of the denominator",
+    "section": "What the pyramids already tell you",
+    "text": "What the pyramids already tell you\nBefore any crime data, the census on its own settles most of what follows. The age pyramids above show two things at once. The minority populations grew far faster than the white population between 2011 and 2021: white up 1%, black 29%, Asian 31%, mixed 40%, other 123%. And they start from much younger age structures. In 2021, 29.3% of the white population was aged 10 to 34, against 39.0% of the black, 39.1% of the Asian and 46.7% of the mixed.\nThose two facts predict the results below without any reference to policing, because a denominator change moves a ratio only to the extent that the groups differ in that characteristic."
+  },
+  {
+    "objectID": "post02.html#what-changes-when-you-change-the-base",
+    "href": "post02.html#what-changes-when-you-change-the-base",
+    "title": "The role of the denominator",
+    "section": "What changes when you change the base",
+    "text": "What changes when you change the base\nCensus vintage, the correction the Home Office made, multiplies the black ratio by 0.78, Asian by 0.77, mixed by 0.72 and other by 0.45.\nRestricting to ages 10 to 34 does as much or more: a further 0.75 for black and Asian, 0.63 for mixed. This is the age gap in the pyramids, arriving in the arithmetic.\nRestricting to males does almost nothing to the comparison, though it halves every rate. The ratios move by 0.96 to 1.03, because every group is close to half male. Sex changes the level and leaves the comparison alone. It is the adjustment people most often assume matters.\nGeography does more than any of them, and nobody adjusts for it. In 2018/19 the England and Wales black ratio peaked at 9.7. Every one of its five parts was lower: South 8.3, Midlands 6.7, East of England and Wales 5.4, London 4.5, North 3.7. A national figure above all of its components is what happens when one group is concentrated where searching is heaviest."
+  },
+  {
+    "objectID": "post02.html#where-it-matters-most",
+    "href": "post02.html#where-it-matters-most",
+    "title": "The role of the denominator",
+    "section": "Where it matters most",
+    "text": "Where it matters most\nA third of the celebrated fall was the census arriving. The published ratio ran 9.7 down to 4.1. On a fixed 2021 base the same searches give 7.6 down to 4.1. The remaining fall is real; about a third of the improvement is not.\nThe correction is four times larger in the North than in London. Recomputing 2018/19 on a fixed base cuts the North from 3.7 to 2.2, a fall of 40%, and London from 4.5 to 4.0, a fall of 11%. It bit hardest where minority populations were smallest and grew fastest.\nNine conclusions reverse. In 2022/23, nine area-and-group combinations sit above parity as published and below it once the base is ages 10 to 34. Asian in the North goes 1.20 to 0.83, mixed in the South 1.61 to 0.98, and the England and Wales “other” figure 1.26 to 0.95. Not that the number moves, but that the sentence changes.\nThe broad groups hide enormous spread. Within the black group: African 2.06, Caribbean 3.46, “other black” 15.44. Within Asian: Chinese 0.17 and Indian 0.51 against 3.18 for “other Asian”. And “white”, the reference against which all of this is measured, is not uniform either: white British 0.94, other white 1.66.\nOne of those is a numerator problem. 26,788 of the 57,189 searches of black people in 2022/23, about 47%, were recorded as “other black”, a category containing 297,781 people, half a percent of England and Wales. That is not a finding about who gets stopped. It is a finding about which box gets ticked, sitting inside the headline figure everyone quotes."
+  },
+  {
+    "objectID": "post02.html#small-counts",
+    "href": "post02.html#small-counts",
+    "title": "The role of the denominator",
+    "section": "Small counts",
+    "text": "Small counts\nRatios for small groups look like every other number on the chart and should not be read the same way.\nRoma is the clearest case, and is excluded here entirely. The census counted 100,970 Roma residents in 2021. The stop and search code, introduced the same year, recorded four searches nationally in 2022/23. That is not a rate of 0.04 per thousand. It is a code officers are not using, and dividing it by a real population produces something that looks like a measurement and is not one. Any cell recorded as zero is treated as missing here for the same reason."
+  },
+  {
+    "objectID": "post02.html#what-this-does-not-show",
+    "href": "post02.html#what-this-does-not-show",
+    "title": "The role of the denominator",
+    "section": "What this does not show",
+    "text": "What this does not show\nAdjusting for age, sex or region changes the question. “Is the burden of this power equal across groups” and “among people of the same age and sex in the same place, is treatment equal” are both legitimate, and they have different answers. Neither figure is the true one. What can be said is narrower: several claims stated as facts about policing turn out to be statements about which population was used as the base, and the base is rarely reported next to the number."
+  },
+  {
+    "objectID": "post02.html#sources",
+    "href": "post02.html#sources",
+    "title": "The role of the denominator",
+    "section": "Sources",
+    "text": "Sources\n\nHome Office, Update to stop and search and arrests statistics using 2021 Census estimates, 2 March 2023\nEthnicity facts and figures, Stop and search, and the underlying 2006 to 2023 data file\nHome Office, Stop and search: interpreting and describing statistics\nONS, Ethnic group, England and Wales: Census 2021\nCensus 2011 table DC2101EW of region by age by sex by ethnic group, via nomis"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Significant Figures",
+    "section": "",
+    "text": "Headlines love a number. “Overrepresented.” “Surging.” “Widening.” The figure gets repeated everywhere and checked almost nowhere.\nThis site does the checking. Each post takes one claim you’ve probably seen, tracks down the public data behind it, and works through whether it holds up, showing every step so you can reproduce the answer or argue with it."
+  },
+  {
+    "objectID": "index.html#start-here",
+    "href": "index.html#start-here",
+    "title": "Significant Figures",
+    "section": "Start here",
+    "text": "Start here\nOverrepresented compared to whom? Are women and non-white people really overrepresented in higher education? The England and Wales 2021 census settles it.\nThe role of the denominator Stop and search disparity ratios swing widely depending on which population you divide by, holding the same seventeen years of searches fixed."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Significant Figures is about checking the numbers behind the headlines. Each post takes one such claim and works through it with public data, showing not just the answer but how it was reached, so you can reproduce or challenge every figure yourself.\nOther fact checking public service sources of the highest integrity: BBC podcast More or Less, The Economist Graphic detail section (paywall), Full Fact, Reuters Fact Check. Full location-specific list.\nThe site is written by me, Maria Boutchkova, Lecturer in Finance at the University of Edinburgh.\nDomain name coincidentally identical and not related to the 2017 book Significant Figures: The Lives and Work of Great Mathematicians by British mathematician Ian Stewart, FRS CMath FIMA."
+  },
+  {
     "objectID": "post01.html",
     "href": "post01.html",
     "title": "Overrepresented compared to whom?",
@@ -61,26 +138,5 @@
     "title": "Overrepresented compared to whom?",
     "section": "What we learned",
     "text": "What we learned\nFor women, the claim holds without qualification. Women aged 22 to 24 are a larger share of degree-level holders than of the resident population in every region, by roughly 5 to 6 points, and it persists in weaker form in older age bands.\nFor ethnicity, it holds in direction but not uniformly. Among residents already here five years before the census, non-white people aged 22 to 24 are overrepresented everywhere except London, where they are slightly underrepresented. The gaps run 2.8 to 5.1 points and narrow in older cohorts. Recent arrivals lift these figures, but by less than one might worry, and in London by enough to close the gap.\n\nReproducible from public data. The tables are built from the 2021 Census of England and Wales through the ONS Create a custom dataset tool, using the selections above.\nDoing it yourself. You do not need to be a programmer. With a current AI model (as of mid-2026) as your guide, install WSL on Windows, then Miniconda, Python and a few libraries; the model gives you the exact commands and fixes anything that breaks. Download the table from ONS, hand it to the model, and ask for a script that draws any visualization you want. On a Mac or Linux machine most of this is already in place."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Significant Figures is about checking the numbers behind the headlines. Each post takes one such claim and works through it with public data, showing not just the answer but how it was reached, so you can reproduce or challenge every figure yourself.\nThe site is written by me, Maria Boutchkova, Lecturer in Finance at the University of Edinburgh."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Significant Figures",
-    "section": "",
-    "text": "Headlines love a number. “Overrepresented.” “Surging.” “Widening.” The figure gets repeated everywhere and checked almost nowhere.\nThis site does the checking. Each post takes one claim you’ve probably seen, tracks down the public data behind it, and works through whether it holds up, showing every step so you can reproduce the answer or argue with it."
-  },
-  {
-    "objectID": "index.html#start-here",
-    "href": "index.html#start-here",
-    "title": "Significant Figures",
-    "section": "Start here",
-    "text": "Start here\nOverrepresented compared to whom? Are women and non-white people really overrepresented in higher education? The England and Wales 2021 census settles it."
   }
 ]

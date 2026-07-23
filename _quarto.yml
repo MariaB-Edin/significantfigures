@@ -13,6 +13,8 @@ website:
         text: Home
       - href: post01.qmd
         text: "Overrepresented compared to whom?"
+      - href: post02.qmd
+        text: "The role of the denominator"
       - about.qmd
 
 format:

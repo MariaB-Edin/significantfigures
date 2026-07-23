@@ -1,0 +1,63 @@
+---
+title: "The role of the denominator"
+subtitle: "Same seventeen years of stop and search data, four different populations to divide them by"
+date: today
+---
+
+## Intro
+
+In March 2023 the Home Office published a [note](https://www.gov.uk/government/statistics/update-to-stop-and-search-and-arrests-statistics-using-2021-census-estimates/update-to-stop-and-search-and-arrests-statistics-using-2021-census-estimates) correcting its own numbers. The 2021 census had arrived, and the department recalculated stop and search disparity using the new population figures instead of the 2011 ones. The rate at which black people were searched relative to white people fell from 6.2 times to 4.8. No policing had changed. The searches were the same searches. Only the population they were divided by had been updated.
+
+That note is trasparent, but it stops one step short. A rate is a fraction, and almost all public argument concerns the top of it. The bottom gets treated as a fact you look up rather than a choice you make. But you choose which census, whether the population at risk is everyone alive or only the ages the power is used on, and whether to compare people in the same part of the country or pool the lot.
+
+This post holds the numerator completely still: the same seventeen years of recorded searches throughout. Then it changes the denominator four ways. No modelling, no adjustment for anything unobserved. Division.
+
+<iframe src="figures/census-denominator-pyramids.html" width="100%" height="1020" style="border:none"></iframe>
+
+## What the pyramids already tell you
+
+Before any crime data, the census on its own settles most of what follows. The age pyramids above show two things at once. The minority populations grew far faster than the white population between 2011 and 2021: white up 1%, black 29%, Asian 31%, mixed 40%, other 123%. And they start from much younger age structures. In 2021, 29.3% of the white population was aged 10 to 34, against 39.0% of the black, 39.1% of the Asian and 46.7% of the mixed.
+
+Those two facts predict the results below without any reference to policing, because a denominator change moves a ratio only to the extent that the groups differ in that characteristic.
+
+<iframe src="figures/stop-search-timelines.html" width="100%" height="1280" style="border:none"></iframe>
+
+## What changes when you change the base
+
+**Census vintage**, the correction the Home Office made, multiplies the black ratio by 0.78, Asian by 0.77, mixed by 0.72 and other by 0.45.
+
+**Restricting to ages 10 to 34** does as much or more: a further 0.75 for black and Asian, 0.63 for mixed. This is the age gap in the pyramids, arriving in the arithmetic.
+
+**Restricting to males does almost nothing to the comparison**, though it halves every rate. The ratios move by 0.96 to 1.03, because every group is close to half male. Sex changes the level and leaves the comparison alone. It is the adjustment people most often assume matters.
+
+**Geography does more than any of them, and nobody adjusts for it.** In 2018/19 the England and Wales black ratio peaked at 9.7. Every one of its five parts was lower: South 8.3, Midlands 6.7, East of England and Wales 5.4, London 4.5, North 3.7. A national figure above all of its components is what happens when one group is concentrated where searching is heaviest.
+
+## Where it matters most
+
+**A third of the celebrated fall was the census arriving.** The published ratio ran 9.7 down to 4.1. On a fixed 2021 base the same searches give 7.6 down to 4.1. The remaining fall is real; about a third of the improvement is not.
+
+**The correction is four times larger in the North than in London.** Recomputing 2018/19 on a fixed base cuts the North from 3.7 to 2.2, a fall of 40%, and London from 4.5 to 4.0, a fall of 11%. It bit hardest where minority populations were smallest and grew fastest.
+
+**Nine conclusions reverse.** In 2022/23, nine area-and-group combinations sit above parity as published and below it once the base is ages 10 to 34. Asian in the North goes 1.20 to 0.83, mixed in the South 1.61 to 0.98, and the England and Wales "other" figure 1.26 to 0.95. Not that the number moves, but that the sentence changes.
+
+**The broad groups hide enormous spread.** Within the black group: African 2.06, Caribbean 3.46, "other black" 15.44. Within Asian: Chinese 0.17 and Indian 0.51 against 3.18 for "other Asian". And "white", the reference against which all of this is measured, is not uniform either: white British 0.94, other white 1.66.
+
+**One of those is a numerator problem.** 26,788 of the 57,189 searches of black people in 2022/23, about 47%, were recorded as "other black", a category containing 297,781 people, half a percent of England and Wales. That is not a finding about who gets stopped. It is a finding about which box gets ticked, sitting inside the headline figure everyone quotes.
+
+## Small counts
+
+Ratios for small groups look like every other number on the chart and should not be read the same way.
+
+Roma is the clearest case, and is excluded here entirely. The census counted 100,970 Roma residents in 2021. The stop and search code, introduced the same year, recorded four searches nationally in 2022/23. That is not a rate of 0.04 per thousand. It is a code officers are not using, and dividing it by a real population produces something that looks like a measurement and is not one. Any cell recorded as zero is treated as missing here for the same reason.
+
+## What this does not show
+
+Adjusting for age, sex or region changes the question. "Is the burden of this power equal across groups" and "among people of the same age and sex in the same place, is treatment equal" are both legitimate, and they have different answers. Neither figure is the true one. What can be said is narrower: several claims stated as facts about policing turn out to be statements about which population was used as the base, and the base is rarely reported next to the number.
+
+## Sources
+
+- Home Office, [Update to stop and search and arrests statistics using 2021 Census estimates](https://www.gov.uk/government/statistics/update-to-stop-and-search-and-arrests-statistics-using-2021-census-estimates/update-to-stop-and-search-and-arrests-statistics-using-2021-census-estimates), 2 March 2023
+- Ethnicity facts and figures, [Stop and search](https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/stop-and-search/latest), and the underlying [2006 to 2023 data file](https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/stop-and-search/latest/downloads/stop-and-search-2006-2023.csv)
+- Home Office, [Stop and search: interpreting and describing statistics](https://www.gov.uk/government/publications/stop-and-search-data-and-the-effect-of-geographical-differences)
+- ONS, [Ethnic group, England and Wales: Census 2021](https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021)
+- Census 2011 table DC2101EW of region by age by sex by ethnic group, via [nomis](https://www.nomisweb.co.uk/)

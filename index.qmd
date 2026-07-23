@@ -10,3 +10,6 @@ This site does the checking. Each post takes one claim you've probably seen, tra
 
 [**Overrepresented compared to whom?**](post01.qmd)
 Are women and non-white people really overrepresented in higher education? The England and Wales 2021 census settles it.
+
+[**The role of the denominator**](post02.qmd)
+Stop and search disparity ratios swing widely depending on which population you divide by, holding the same seventeen years of searches fixed.
