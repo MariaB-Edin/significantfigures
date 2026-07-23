@@ -87,7 +87,7 @@ def p1_stats(frame, mask_name):
 
 def p1_traces(stats, visible=True):
     ys = [f'{("East&Wls" if rg=="East of England & Wales" else rg)}<br><span style="font-size:11px;color:#898781">'
-          f'{stats[rg][3]:.0f}k, {stats[rg][4]:.0f}% hold L4+</span>' for rg in REGIONS]
+          f'{stats[rg][3]:.0f}k, {stats[rg][4]:.0f}% L4+</span>' for rg in REGIONS]
     cx, cy = [], []
     for rg, y in zip(REGIONS, ys):
         ps, ls, gap, _, _ = stats[rg]
@@ -187,7 +187,7 @@ def p2_traces(cell, visible=True):
 def p2_ticktext(cell, order):
     info = {lab: (tot, attain) for lab, ls, gap, tot, attain in cell}
     return [f'{lab}<br><span style="font-size:10px;color:#898781">'
-            f'{info[lab][0]/1e3:.0f}k, {info[lab][1]:.0f}% hold L4+</span>' for lab in order]
+            f'{info[lab][0]/1e3:.0f}k, {info[lab][1]:.0f}% L4+</span>' for lab in order]
 
 def build_part2(frame, mask_name, title):
     order = list(reversed([b[1] for b in BANDS]))
