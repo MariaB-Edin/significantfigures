@@ -38,7 +38,7 @@ The hollow dot is each group's share of the population, the filled dot their sha
 
 ::: {.column-page}
 ```{=html}
-<iframe src="figures/fig_part1_sex.html" width="100%" height="380" style="border:none"></iframe>
+<iframe src="figures/fig_part1_sex.html" width="100%" height="400" style="border:none"></iframe>
 ```
 :::
 
@@ -50,7 +50,7 @@ The sex figures come from the first download and so cover all residents. Applyin
 
 ::: {.column-page}
 ```{=html}
-<iframe src="figures/fig_part1_ethnicity.html" width="100%" height="380" style="border:none"></iframe>
+<iframe src="figures/fig_part1_ethnicity.html" width="100%" height="400" style="border:none"></iframe>
 ```
 :::
 
@@ -63,6 +63,10 @@ Counting recent arrivals too adds between 0.6 and 1.2 points, most of it in the 
 The same comparison, now with the population share as the line and each age band placed by how far it sits above or below it. The number by each dot is that band's share of degree holders.
 
 <iframe src="figures/fig_part2_nonwhite.html" width="100%" height="620" style="border:none"></iframe>
+
+Take 22 to 24 year olds. Non-white Londoners are 47.7% of Level 4 holders against 48.8% of the population, a gap of -1.1: under-representation. Hover over the two younger positive dots to see the exact gaps.
+
+But almost nobody has finished a three-year degree by 21. Only 20.2% of London 20 to 21 year olds hold anything at Level 4, against 56.3% three years later, and most of that 20% is an HNC, HND, foundation degree or higher apprenticeship rather than a first degree. Non-white Londoners lead on those routes, not on degrees.
 
 <iframe src="figures/fig_part2_women.html" width="100%" height="620" style="border:none"></iframe>
 

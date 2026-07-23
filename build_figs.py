@@ -61,7 +61,7 @@ def base_layout(fig, height, title=None):
     fig.update_layout(
         font=dict(family=FONT, size=13, color='#33322e'),
         paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-        margin=dict(l=170, r=40, t=60 if title else 30, b=65),
+        margin=dict(l=170, r=40, t=60 if title else 30, b=85),
         height=height, showlegend=False,
         title=dict(text=title, x=0, xanchor='left', font=dict(size=15)) if title else None)
     return fig
@@ -82,14 +82,15 @@ def p1_stats(frame, mask_name):
         m = s.nonwhite if mask_name=='nonwhite' else (s.sex==mask_name)
         ps = 100*s.loc[m,'n'].sum()/tot
         ls = 100*s.loc[m & s.l4,'n'].sum()/l4
-        out[rg] = (round(ps,1), round(ls,1), round(ls-ps,1), tot/1e3)
+        out[rg] = (round(ps,1), round(ls,1), round(ls-ps,1), tot/1e3, round(100*l4/tot,1))
     return out
 
 def p1_traces(stats, visible=True):
-    ys = [f'{("East&Wls" if rg=="East of England & Wales" else rg)}<br><span style="font-size:11px;color:#898781">{stats[rg][3]:.0f}k</span>' for rg in REGIONS]
+    ys = [f'{("East&Wls" if rg=="East of England & Wales" else rg)}<br><span style="font-size:11px;color:#898781">'
+          f'{stats[rg][3]:.0f}k, {stats[rg][4]:.0f}% hold L4+</span>' for rg in REGIONS]
     cx, cy = [], []
     for rg, y in zip(REGIONS, ys):
-        ps, ls, gap, _ = stats[rg]
+        ps, ls, gap, _, _ = stats[rg]
         cx += [ps, ls, None]; cy += [y, y, None]
     conn = go.Scatter(x=cx, y=cy, mode='lines', line=dict(color=BENCH, width=2),
                       opacity=0.5, hoverinfo='skip', visible=visible)
@@ -105,7 +106,7 @@ def p1_traces(stats, visible=True):
 def p1_annotations(stats, ys):
     ann = []
     for rg, y in zip(REGIONS, ys):
-        ps, ls, gap, _ = stats[rg]
+        ps, ls, gap, _, _ = stats[rg]
         lo, hi = (ps, ls) if ps <= ls else (ls, ps)
         ann.append(dict(x=lo, y=y, text=f'{lo:.1f}', showarrow=False, xanchor='right',
                         xshift=-8, font=dict(size=11, color='#6f6d67')))
@@ -121,13 +122,14 @@ def build_part1_sex():
     ysw, tw = p1_traces(w, True)
     ysm, tm = p1_traces(m, False)
     fig = go.Figure(tw + tm)
-    base_layout(fig, 360)
+    base_layout(fig, 380)
     fig.update_xaxes(range=[42, 62], ticksuffix='%', showgrid=True,
                      gridcolor='rgba(137,135,129,0.18)', zeroline=False)
     fig.add_vline(x=50, line=dict(color=BENCH, width=1, dash='dot'), opacity=0.5)
     fig.update_yaxes(categoryorder='array', categoryarray=list(reversed(ysw)),
                      showgrid=False, ticklabelposition='outside')
-    cap = caption_annotation('Number below region name = population count, ages 22–24, in that region')
+    cap = caption_annotation('Numbers below region name = population count and share holding Level 4+,<br>'
+                             'ages 22–24, in that region')
     fig.update_layout(annotations=p1_annotations(w, ysw) + [cap],
         updatemenus=[dict(type='buttons', direction='right', x=0, xanchor='left', y=1.12,
             buttons=[
@@ -144,12 +146,12 @@ def build_part1_ethnicity():
     nw = p1_stats(dr, 'nonwhite')
     ys, tr = p1_traces(nw, True)
     fig = go.Figure(tr)
-    base_layout(fig, 360)
+    base_layout(fig, 380)
     fig.update_xaxes(range=[8, 52], ticksuffix='%', showgrid=True,
                      gridcolor='rgba(137,135,129,0.18)', zeroline=False)
     fig.update_yaxes(categoryorder='array', categoryarray=list(reversed(ys)), showgrid=False)
-    cap = caption_annotation('Number below region name = population count, ages 22–24, '
-                             'excluding arrivals within the previous five years')
+    cap = caption_annotation('Numbers below region name = population count and share holding Level 4+,<br>'
+                             'ages 22–24, excluding arrivals within the previous five years')
     fig.update_layout(annotations=p1_annotations(nw, ys) + [cap])
     return fig
 
@@ -163,13 +165,13 @@ def p2_cell(frame, rg, mask_name):
         m = s.nonwhite if mask_name=='nonwhite' else (s.sex=='Female')
         ps = 100*s.loc[m,'n'].sum()/tot
         ls = 100*s.loc[m & s.l4,'n'].sum()/l4
-        rows.append((lab, round(ls,1), round(ls-ps,1), tot))
+        rows.append((lab, round(ls,1), round(ls-ps,1), tot, round(100*l4/tot,1)))
     return rows
 
 def p2_traces(cell, visible=True):
     labs = [x[0] for x in cell]; l4s = [x[1] for x in cell]; gaps = [x[2] for x in cell]
     sx, sy = [], []
-    for lab, ls, gap, tot in cell:
+    for lab, ls, gap, tot, attain in cell:
         sx += [0, gap, None]; sy += [lab, lab, None]
     conn = go.Scatter(x=sx, y=sy, mode='lines', line=dict(color=BENCH, width=2),
                       opacity=0.45, hoverinfo='skip', visible=visible)
@@ -183,8 +185,9 @@ def p2_traces(cell, visible=True):
     return [conn, pts]
 
 def p2_ticktext(cell, order):
-    counts = {lab: tot for lab, ls, gap, tot in cell}
-    return [f'{lab}<br><span style="font-size:10px;color:#898781">{counts[lab]/1e3:.0f}k</span>' for lab in order]
+    info = {lab: (tot, attain) for lab, ls, gap, tot, attain in cell}
+    return [f'{lab}<br><span style="font-size:10px;color:#898781">'
+            f'{info[lab][0]/1e3:.0f}k, {info[lab][1]:.0f}% hold L4+</span>' for lab in order]
 
 def build_part2(frame, mask_name, title):
     order = list(reversed([b[1] for b in BANDS]))
@@ -209,7 +212,7 @@ def build_part2(frame, mask_name, title):
                      tickmode='array', tickvals=order, ticktext=ticktexts[0])
     cap = caption_annotation("Dot position = gap in percentage points from the population share (line at 0).<br>"
                              "Number by dot = that age band's share of Level 4+ holders.<br>"
-                             "Number below age label = population count for that band and region, in '000s.")
+                             "Numbers below age label = population, in '000s, and share holding Level 4+ (all groups).")
     fig.update_layout(font=dict(family=FONT, size=13, color='#33322e'),
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
                       height=580, showlegend=False, margin=dict(l=70, r=40, t=105, b=130),
