@@ -1,7 +1,7 @@
 ---
 title: "The role of the denominator"
 subtitle: "Same seventeen years of stop and search data, four different populations to divide them by"
-date: today
+date: 2026-07-23
 ---
 
 ## Intro
