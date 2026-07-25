@@ -1,0 +1,69 @@
+---
+title: "Where the graduates go"
+subtitle: "The graduate pipeline is diverse; the LEO data shows where sector representation and pay diverge after university"
+date: today
+---
+
+## The pipeline is diverse. Is the destination?
+
+When the CFA Institute asked us to look at who enters the UK investment industry, the natural place to start was the pipeline: the graduates flowing out of universities each year. We found that as of 2019, women and the group of all ethnic-minority graduates (Asian, Black, Mixed and Other, which we label ABMO throughout) were **over**-represented in higher education relative to the 18-to-19-year-old population, not under — the one exception being Black and Other students at the most selective universities.[^cfa]
+
+So if finance ends up looking undiverse, the gap does not open at the university gates. It opens somewhere between graduation and the workplace — and differently in different parts of the economy. The Longitudinal Education Outcomes (LEO) data lets us watch that happen, sector by sector, for every graduate cohort in England, at fixed numbers of years after graduation.
+
+One thing to fix in mind before the map: every share below is measured among **higher-education graduates who are in work** — not the whole population, and not even all graduates. That matters, because being in work is itself unevenly distributed, and [we return to it at the end](#confounders). With that caveat noted, here is the map.
+
+## Reading the map
+
+Three panels. **Representation** shows how far each sector's share of women (or ABMO graduates) sits above or below the overall graduate share at the same point after graduation, in percentage points — zero means the sector mirrors the graduate population, left is under-represented, right is over. **Pay** shows the gap between the group's median earnings and the comparison group's, as a percentage from parity — women against men, ABMO against white. **Median earnings** shows the sector's overall pay level in pounds, as a backdrop: the same small gap means very different things at £25K and at £60K.
+
+The buttons switch between women and ABMO. Within each sector the four bars are years after graduation — 1, 3, 5, 10. Sectors are ordered most over-represented at the top. The three shaded rows are the finance carve-outs.[^sectors]
+
+::: {.column-page}
+```{=html}
+<iframe src="figures/fig_p3_leo_reppay.html" width="100%" height="780" style="border:none"></iframe>
+```
+:::
+
+Women are heavily over-represented in Health, Education and Social Care, yet under-paid there as almost everywhere else. Across all 23 sectors at four seniority points, women are over-paid in only two: Security & Taxi services at 1 YAG — the smallest sector, 0.3% of all graduates, where they are also severely under-represented — and Hospitality at 1 and 3 YAG, the sector with the absolute lowest earnings. ABMO graduates are also over-represented in Health and Social Care, though less than women, and here they are over-paid. The other sectors where ABMO graduates are over-paid at most seniority levels are Retail, Manufacturing, Media & Arts, Government, and Business Support Services — with the notable exception of the finance sectors, taken up below.
+
+## High pay, low pay
+
+Ranked by median graduate earnings at five years out, the five highest-paying sectors are **Investment (£59K)**, **Hybrid finance (£43K)**, the **Army (£42K)**, **IT (£39K)** and **Construction (£38K)** — with the remaining finance carve-out RestFin and management consulting, just below.
+
+The disparities are not spread evenly across this ranking — they concentrate at the top. The widest women pay gaps sit in the best-paid sectors: women earn 23% below men in Investment, 27% below in Hybrid finance, and 27% below in Construction at five years out, each gap widening further by ten years. The only sectors where women reach parity or better are Hospitality, Retail and Security & Taxi — all near the bottom of the pay ranking. So women are best paid, relative to men, precisely where there is least to be paid.
+
+The three finance sectors show a distinct ABMO signature: **over-represented but under-paid.** ABMO graduates are more likely than white graduates to work in Investment, Hybrid finance and RestFin — but earn slightly less within each. This is the pattern the CFA pipeline question runs into: a diverse intake reaching the industry, then losing ground on pay once inside it.
+
+## What these numbers are not {#confounders}
+
+Every gap above is measured among graduates **in work**. That is not neutral: employment, hours and job security are themselves unevenly distributed across the same groups whose representation we are measuring.
+
+::: {.column-page}
+```{=html}
+<iframe src="figures/fig_p3_confounders.html" width="100%" height="500" style="border:none"></iframe>
+```
+:::
+
+**Fewer women and ABMO graduates are in work.** Across the working-age population, employment rates run persistently below those of men and white workers (first metric above). Because our sector shares are calculated among the employed, representation measured against *all* graduates would look worse still — the map understates the shortfall.
+
+**The gap survives qualification.** Restricting to people holding a Level 4 qualification or above, the ABMO employment gap narrows but does not close — it is not merely a composition effect. See the Level 4+ plot.
+
+**The women pay gap is partly hours.** LEO earnings are not hours-adjusted, and women are far more likely to work part-time (roughly 37% against 11% of men), so some of the women pay bars reflect hours, not the rate for the job. This is almost entirely a gender effect: part-time rates for white and ABMO workers are near-identical, so it does not explain the ABMO pay gaps.
+
+**The ABMO gaps are partly insecurity.** The mirror image: temporary work is far more common among ABMO workers — Black workers around 2.5× as likely as white to be in temporary employment — while the sex gap is small. Insecure contracts are a mechanism for the ABMO gaps in a way part-time hours are not.
+
+Each pay gap has its own dominant confounder — hours for women, insecurity for ABMO — and neither should be applied to the other. None of this makes the gaps disappear; it tells you which lever is doing the work. We study as many additional supply and demand factors as the administrative-linked data allow in our [upcoming revision](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4503424), where factors like STEM subject choice, university prestige, distance and job flexibility close the gaps for ABMO graduates but not for women.
+
+---
+
+### Source and method
+
+The employment, hours and qualification series come from the government's [*Ethnicity facts and figures* Employment measures](https://www.ethnicity-facts-figures.service.gov.uk/work-pay-and-benefits/employment/employment/latest/), built on the ONS Annual Population Survey.
+
+The sector map is built from the [2020/21 Longitudinal Education Outcomes (LEO) release](https://explore-education-statistics.service.gov.uk/find-statistics/leo-graduate-and-postgraduate-outcomes/2020-21) — the "Industry data — 5-digit SIC code level" file in the supporting files. This is the first LEO vintage with 5-digit SIC codes, which is what makes the finance carve-outs possible. Method detail is in the footnotes.[^method]
+
+[^cfa]: CFA Institute, [*The Supply of Diverse Talent in the United Kingdom: Higher-Education Evidence*](https://rpc.cfainstitute.org/research/reports/2023/supply-diverse-talent-uk-higher-education), 2023.
+
+[^sectors]: We re-aggregate the 5-digit SIC codes into 23 sectors, each reasonably homogeneous in the kind of graduate labour it uses and large enough to report reliably, with three finance sub-sectors (Inv, Hybrid, RestFin) pulled out separately.
+
+[^method]: From the raw file we keep the totals for prior attainment, region and subject; restrict to FSM "Total"; drop "Not known" ethnicity; take a count-weighted mean of cell median earnings; and aggregate to the 23 sectors. Representation is each sector's share of women, or ABMO, minus the overall share at the same years after graduation; pay is the ratio of group median earnings to the comparison group. LEO earnings are medians, so the overall pay benchmark is a count-weighted mean of sector medians, not a true population median.

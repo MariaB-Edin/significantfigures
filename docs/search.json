@@ -1,5 +1,131 @@
 [
   {
+    "objectID": "post03.html",
+    "href": "post03.html",
+    "title": "Where the graduates go",
+    "section": "",
+    "text": "When the CFA Institute asked us to look at who enters the UK investment industry, the natural place to start was the pipeline: the graduates flowing out of universities each year. We found that as of 2019, women and the group of all ethnic-minority graduates (Asian, Black, Mixed and Other, which we label ABMO throughout) were over-represented in higher education relative to the 18-to-19-year-old population, not under — the one exception being Black and Other students at the most selective universities.1\nSo if finance ends up looking undiverse, the gap does not open at the university gates. It opens somewhere between graduation and the workplace — and differently in different parts of the economy. The Longitudinal Education Outcomes (LEO) data lets us watch that happen, sector by sector, for every graduate cohort in England, at fixed numbers of years after graduation.\nOne thing to fix in mind before the map: every share below is measured among higher-education graduates who are in work — not the whole population, and not even all graduates. That matters, because being in work is itself unevenly distributed, and we return to it at the end. With that caveat noted, here is the map."
+  },
+  {
+    "objectID": "post03.html#the-pipeline-is-diverse.-is-the-destination",
+    "href": "post03.html#the-pipeline-is-diverse.-is-the-destination",
+    "title": "Where the graduates go",
+    "section": "",
+    "text": "When the CFA Institute asked us to look at who enters the UK investment industry, the natural place to start was the pipeline: the graduates flowing out of universities each year. We found that as of 2019, women and the group of all ethnic-minority graduates (Asian, Black, Mixed and Other, which we label ABMO throughout) were over-represented in higher education relative to the 18-to-19-year-old population, not under — the one exception being Black and Other students at the most selective universities.1\nSo if finance ends up looking undiverse, the gap does not open at the university gates. It opens somewhere between graduation and the workplace — and differently in different parts of the economy. The Longitudinal Education Outcomes (LEO) data lets us watch that happen, sector by sector, for every graduate cohort in England, at fixed numbers of years after graduation.\nOne thing to fix in mind before the map: every share below is measured among higher-education graduates who are in work — not the whole population, and not even all graduates. That matters, because being in work is itself unevenly distributed, and we return to it at the end. With that caveat noted, here is the map."
+  },
+  {
+    "objectID": "post03.html#reading-the-map",
+    "href": "post03.html#reading-the-map",
+    "title": "Where the graduates go",
+    "section": "Reading the map",
+    "text": "Reading the map\nThree panels. Representation shows how far each sector’s share of women (or ABMO graduates) sits above or below the overall graduate share at the same point after graduation, in percentage points — zero means the sector mirrors the graduate population, left is under-represented, right is over. Pay shows the gap between the group’s median earnings and the comparison group’s, as a percentage from parity — women against men, ABMO against white. Median earnings shows the sector’s overall pay level in pounds, as a backdrop: the same small gap means very different things at £25K and at £60K.\nThe buttons switch between women and ABMO. Within each sector the four bars are years after graduation — 1, 3, 5, 10. Sectors are ordered most over-represented at the top. The three shaded rows are the finance carve-outs.2\n\n\n\nWomen are heavily over-represented in Health, Education and Social Care, yet under-paid there as almost everywhere else. Across all 23 sectors at four seniority points, women are over-paid in only two: Security & Taxi services at 1 YAG — the smallest sector, 0.3% of all graduates, where they are also severely under-represented — and Hospitality at 1 and 3 YAG, the sector with the absolute lowest earnings. ABMO graduates are also over-represented in Health and Social Care, though less than women, and here they are over-paid. The other sectors where ABMO graduates are over-paid at most seniority levels are Retail, Manufacturing, Media & Arts, Government, and Business Support Services — with the notable exception of the finance sectors, taken up below."
+  },
+  {
+    "objectID": "post03.html#high-pay-low-pay",
+    "href": "post03.html#high-pay-low-pay",
+    "title": "Where the graduates go",
+    "section": "High pay, low pay",
+    "text": "High pay, low pay\nRanked by median graduate earnings at five years out, the five highest-paying sectors are Investment (£59K), Hybrid finance (£43K), the Army (£42K), IT (£39K) and Construction (£38K) — with the remaining finance carve-out RestFin and management consulting, just below.\nThe disparities are not spread evenly across this ranking — they concentrate at the top. The widest women pay gaps sit in the best-paid sectors: women earn 23% below men in Investment, 27% below in Hybrid finance, and 27% below in Construction at five years out, each gap widening further by ten years. The only sectors where women reach parity or better are Hospitality, Retail and Security & Taxi — all near the bottom of the pay ranking. So women are best paid, relative to men, precisely where there is least to be paid.\nThe three finance sectors show a distinct ABMO signature: over-represented but under-paid. ABMO graduates are more likely than white graduates to work in Investment, Hybrid finance and RestFin — but earn slightly less within each. This is the pattern the CFA pipeline question runs into: a diverse intake reaching the industry, then losing ground on pay once inside it."
+  },
+  {
+    "objectID": "post03.html#confounders",
+    "href": "post03.html#confounders",
+    "title": "Where the graduates go",
+    "section": "What these numbers are not",
+    "text": "What these numbers are not\nEvery gap above is measured among graduates in work. That is not neutral: employment, hours and job security are themselves unevenly distributed across the same groups whose representation we are measuring.\n\n\n\nFewer women and ABMO graduates are in work. Across the working-age population, employment rates run persistently below those of men and white workers (first metric above). Because our sector shares are calculated among the employed, representation measured against all graduates would look worse still — the map understates the shortfall.\nThe gap survives qualification. Restricting to people holding a Level 4 qualification or above, the ABMO employment gap narrows but does not close — it is not merely a composition effect. See the Level 4+ plot.\nThe women pay gap is partly hours. LEO earnings are not hours-adjusted, and women are far more likely to work part-time (roughly 37% against 11% of men), so some of the women pay bars reflect hours, not the rate for the job. This is almost entirely a gender effect: part-time rates for white and ABMO workers are near-identical, so it does not explain the ABMO pay gaps.\nThe ABMO gaps are partly insecurity. The mirror image: temporary work is far more common among ABMO workers — Black workers around 2.5× as likely as white to be in temporary employment — while the sex gap is small. Insecure contracts are a mechanism for the ABMO gaps in a way part-time hours are not.\nEach pay gap has its own dominant confounder — hours for women, insecurity for ABMO — and neither should be applied to the other. None of this makes the gaps disappear; it tells you which lever is doing the work. We study as many additional supply and demand factors as the administrative-linked data allow in our upcoming revision, where factors like STEM subject choice, university prestige, distance and job flexibility close the gaps for ABMO graduates but not for women.\n\n\nSource and method\nThe employment, hours and qualification series come from the government’s Ethnicity facts and figures Employment measures, built on the ONS Annual Population Survey.\nThe sector map is built from the 2020/21 Longitudinal Education Outcomes (LEO) release — the “Industry data — 5-digit SIC code level” file in the supporting files. This is the first LEO vintage with 5-digit SIC codes, which is what makes the finance carve-outs possible. Method detail is in the footnotes.3"
+  },
+  {
+    "objectID": "post03.html#footnotes",
+    "href": "post03.html#footnotes",
+    "title": "Where the graduates go",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nCFA Institute, The Supply of Diverse Talent in the United Kingdom: Higher-Education Evidence, 2023.↩︎\nWe re-aggregate the 5-digit SIC codes into 23 sectors, each reasonably homogeneous in the kind of graduate labour it uses and large enough to report reliably, with three finance sub-sectors (Inv, Hybrid, RestFin) pulled out separately.↩︎\nFrom the raw file we keep the totals for prior attainment, region and subject; restrict to FSM “Total”; drop “Not known” ethnicity; take a count-weighted mean of cell median earnings; and aggregate to the 23 sectors. Representation is each sector’s share of women, or ABMO, minus the overall share at the same years after graduation; pay is the ratio of group median earnings to the comparison group. LEO earnings are medians, so the overall pay benchmark is a count-weighted mean of sector medians, not a true population median.↩︎"
+  },
+  {
+    "objectID": "post01.html",
+    "href": "post01.html",
+    "title": "Overrepresented compared to whom?",
+    "section": "",
+    "text": "Official statistics report that women and most ethnic minority groups are a larger share of university students than of the general population. Women were 56.6% of first-degree undergraduates in 2021/22 (Advance HE). White pupils have the lowest higher-education entry rate of any broad ethnic group (gov.uk ethnicity facts and figures, with more in the House of Commons Library briefing). In the press this becomes one line: women and non-white people are overrepresented in higher education."
+  },
+  {
+    "objectID": "post01.html#the-claim",
+    "href": "post01.html#the-claim",
+    "title": "Overrepresented compared to whom?",
+    "section": "",
+    "text": "Official statistics report that women and most ethnic minority groups are a larger share of university students than of the general population. Women were 56.6% of first-degree undergraduates in 2021/22 (Advance HE). White pupils have the lowest higher-education entry rate of any broad ethnic group (gov.uk ethnicity facts and figures, with more in the House of Commons Library briefing). In the press this becomes one line: women and non-white people are overrepresented in higher education."
+  },
+  {
+    "objectID": "post01.html#the-question",
+    "href": "post01.html#the-question",
+    "title": "Overrepresented compared to whom?",
+    "section": "The question",
+    "text": "The question\n“Overrepresented” only means something once you finish the sentence: overrepresented compared to whom? That comparison group is the benchmark, and the benchmark decides the answer. Students are young, and the young population is more ethnically diverse than the old. Compare students against the whole population and you can produce “overrepresentation” out of nothing but age. The honest comparison is against people of the same age."
+  },
+  {
+    "objectID": "post01.html#how-we-check-it",
+    "href": "post01.html#how-we-check-it",
+    "title": "Overrepresented compared to whom?",
+    "section": "How we check it",
+    "text": "How we check it\nWe use one free public source: the England and Wales 2021 census. It records both the population and whether each person holds a degree-level qualification (Level 4 or above, which covers a degree and higher). For residents aged 22 to 24, we compare each group’s share of the population with their share of the degree-level holders, region by region. If a group is a larger share of the holders than its share in the population, they are overrepresented, and the gap says by how much.\nTwo choices define the comparison group. Age: 22 to 24, because most people on a standard degree have finished by 22 and the band still reflects recent cohorts. Residence: about one in ten residents that age arrived in the UK within the previous five years, one in five in London. Include them and the count covers everyone now living here who holds a degree, wherever they earned it. Exclude them and it covers only people who were already here when the decision to go to university was made. The claim is about British higher education, so the main figures exclude recent arrivals. Where including them would change the answer, we say so."
+  },
+  {
+    "objectID": "post01.html#getting-the-data",
+    "href": "post01.html#getting-the-data",
+    "title": "Overrepresented compared to whom?",
+    "section": "Getting the data",
+    "text": "Getting the data\nOn the ONS Create a custom dataset tool, choose Usual residents and set Area type to Regions. Two downloads are needed.\nFirst, add Highest level of qualification, Age, Sex and Ethnic group. Set Age to the categories that include 22 to 24 and Ethnic group to 6 categories. This gives the sex panel and the unadjusted ethnicity figures.\nSecond, repeat with Length of residence in the UK in place of Sex. This gives the same table split by how long each resident has been in the country.\nThey have to be separate because ONS suppresses cells small enough to identify individuals. Asking for all five variables at once thins the table until half the regions are withheld. Five variables clear where six do not, so sex and residence are collected in turn rather than together.\nThis covers England and Wales. Scotland and Northern Ireland ran separate censuses and can be incorporated but it is unnecessary for our purposes."
+  },
+  {
+    "objectID": "post01.html#what-it-shows",
+    "href": "post01.html#what-it-shows",
+    "title": "Overrepresented compared to whom?",
+    "section": "What it shows",
+    "text": "What it shows\nThe hollow dot is each group’s share of the population, the filled dot their share of degree-level holders, and the gap between them is the over or under-representation.\n\nGender 22-24 y olds\n\n\n\nWomen are a larger share of degree-level holders than their share of the population in every region, by about 5 to 6 percentage points. Men are the exact mirror. For example, in London the share of young women who are degree-holders is 56.7%, while their share in the population is 52.1, a positive gap of 4.6%.\nThe sex figures come from the first download and so cover all residents. Applying the residence filter moves the women’s gap from +5.8 to +6.1 points, which changes nothing.\n\n\nEthnicity 22-24 y olds\n\n\n\nNon-white residents are a larger share of degree-level holders than their share of the population everywhere except London, from 2.8 points in the North to 5.1 in the Midlands, against 4.6 for England and Wales overall. London is different from the rest of the country in the ethnicity composition of the population (see more on this in my next post). While non-white young people range from 11.6% in the South to 21.8 in the Midlands, their share in London is 48.9%. Relative to this high population proportion, the share of degree-holders falls 1.1% below.\nCounting recent arrivals too adds between 0.6 and 1.2 points, most of it in the Asian group, and moves London from -1.1 to roughly level. No group changes sign."
+  },
+  {
+    "objectID": "post01.html#and-across-age-groups",
+    "href": "post01.html#and-across-age-groups",
+    "title": "Overrepresented compared to whom?",
+    "section": "And across age groups",
+    "text": "And across age groups\nThe same comparison, now with the population share as the line and each age band placed by how far it sits above or below it. The number by each dot is that band’s share of degree holders.\n\n\nTake 22 to 24 year olds. Non-white Londoners are 47.7% of Level 4 holders against 48.8% of the population, a gap of -1.1: under-representation. Hover over the two younger positive dots to see the exact gaps.\nBut almost nobody has finished a three-year degree by 21. Only 20.2% of London 20 to 21 year olds hold anything at Level 4, against 56.3% three years later, and most of that 20% is an HNC, HND, foundation degree or higher apprenticeship rather than a first degree. Non-white Londoners lead on those routes, not on degrees.\n\n\nThe gaps for women ease toward the line with age and turn negative in all regions for the over-50s."
+  },
+  {
+    "objectID": "post01.html#what-to-keep-in-mind",
+    "href": "post01.html#what-to-keep-in-mind",
+    "title": "Overrepresented compared to whom?",
+    "section": "What to keep in mind",
+    "text": "What to keep in mind\nThe census measures who holds a degree, not who is enrolled today, and at 22 to 24 some are still studying."
+  },
+  {
+    "objectID": "post01.html#what-we-learned",
+    "href": "post01.html#what-we-learned",
+    "title": "Overrepresented compared to whom?",
+    "section": "What we learned",
+    "text": "What we learned\nFor women, the claim holds without qualification. Women aged 22 to 24 are a larger share of degree-level holders than their share of the resident population in every region, by roughly 5 to 6 points, and it persists in weaker form in older age bands.\nFor ethnicity, it holds in direction but not uniformly. Among residents already here five years before the census, non-white people aged 22 to 24 are overrepresented everywhere except London, where they are slightly underrepresented. The gaps run 2.8 to 5.1 points and narrow in older cohorts. Recent arrivals lift these figures, but by less than one might worry, and in London by enough to close the gap.\n\nReproducible from public data. The tables are built from the 2021 Census of England and Wales through the ONS Create a custom dataset tool, using the selections above.\nDoing it yourself. You do not need to be a programmer. With a current AI model (as of mid-2026) as your guide, install WSL on Windows, then Miniconda, Python and a few libraries; the model gives you the exact commands and fixes anything that breaks. Download the table from ONS, hand it to the model, and ask for a script that draws any visualization you want. On a Mac or Linux machine most of this is already in place."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Significant Figures is about checking the numbers behind the headlines. Each post takes one such claim and works through it with public data, showing not just the answer but how it was reached, so you can reproduce or challenge every figure yourself.\nOther fact checking public service sources of the highest integrity: BBC podcast More or Less, The Economist Graphic detail section (paywall), Full Fact, Reuters Fact Check. Full location-specific list.\nThe site is written by me, Maria Boutchkova, Lecturer in Finance at the University of Edinburgh.\nDomain name coincidentally identical and not related to the 2017 book Significant Figures: The Lives and Work of Great Mathematicians by British mathematician Ian Stewart, FRS CMath FIMA."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Significant Figures",
+    "section": "",
+    "text": "Headlines love a number. “Overrepresented.” “Surging.” “Widening.” The figure gets repeated everywhere and checked almost nowhere.\nThis site does the checking. Each post takes one claim you’ve probably seen, tracks down the public data behind it, and works through whether it holds up, showing every step so you can reproduce the answer or argue with it."
+  },
+  {
+    "objectID": "index.html#start-here",
+    "href": "index.html#start-here",
+    "title": "Significant Figures",
+    "section": "Start here",
+    "text": "Start here\nOverrepresented compared to whom? Are women and non-white people really overrepresented in higher education? The England and Wales 2021 census settles it.\nThe role of the denominator Stop and search disparity ratios swing widely depending on which population you divide by, holding the same seventeen years of searches fixed.\nWhere the graduates go Graduates enter the workforce diverse. Sector by sector, LEO data shows where representation and pay diverge afterward — and why."
+  },
+  {
     "objectID": "post02.html",
     "href": "post02.html",
     "title": "The role of the denominator",
@@ -54,89 +180,5 @@
     "title": "The role of the denominator",
     "section": "Sources",
     "text": "Sources\n\nHome Office, Update to stop and search and arrests statistics using 2021 Census estimates, 2 March 2023\nEthnicity facts and figures, Stop and search, and the underlying 2006 to 2023 data file\nHome Office, Stop and search: interpreting and describing statistics\nONS, Ethnic group, England and Wales: Census 2021\nCensus 2011 table DC2101EW of region by age by sex by ethnic group, via nomis"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Significant Figures",
-    "section": "",
-    "text": "Headlines love a number. “Overrepresented.” “Surging.” “Widening.” The figure gets repeated everywhere and checked almost nowhere.\nThis site does the checking. Each post takes one claim you’ve probably seen, tracks down the public data behind it, and works through whether it holds up, showing every step so you can reproduce the answer or argue with it."
-  },
-  {
-    "objectID": "index.html#start-here",
-    "href": "index.html#start-here",
-    "title": "Significant Figures",
-    "section": "Start here",
-    "text": "Start here\nOverrepresented compared to whom? Are women and non-white people really overrepresented in higher education? The England and Wales 2021 census settles it.\nThe role of the denominator Stop and search disparity ratios swing widely depending on which population you divide by, holding the same seventeen years of searches fixed."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Significant Figures is about checking the numbers behind the headlines. Each post takes one such claim and works through it with public data, showing not just the answer but how it was reached, so you can reproduce or challenge every figure yourself.\nOther fact checking public service sources of the highest integrity: BBC podcast More or Less, The Economist Graphic detail section (paywall), Full Fact, Reuters Fact Check. Full location-specific list.\nThe site is written by me, Maria Boutchkova, Lecturer in Finance at the University of Edinburgh.\nDomain name coincidentally identical and not related to the 2017 book Significant Figures: The Lives and Work of Great Mathematicians by British mathematician Ian Stewart, FRS CMath FIMA."
-  },
-  {
-    "objectID": "post01.html",
-    "href": "post01.html",
-    "title": "Overrepresented compared to whom?",
-    "section": "",
-    "text": "Official statistics report that women and most ethnic minority groups are a larger share of university students than of the general population. Women were 56.6% of first-degree undergraduates in 2021/22 (Advance HE). White pupils have the lowest higher-education entry rate of any broad ethnic group (gov.uk ethnicity facts and figures, with more in the House of Commons Library briefing). In the press this becomes one line: women and non-white people are overrepresented in higher education."
-  },
-  {
-    "objectID": "post01.html#the-claim",
-    "href": "post01.html#the-claim",
-    "title": "Overrepresented compared to whom?",
-    "section": "",
-    "text": "Official statistics report that women and most ethnic minority groups are a larger share of university students than of the general population. Women were 56.6% of first-degree undergraduates in 2021/22 (Advance HE). White pupils have the lowest higher-education entry rate of any broad ethnic group (gov.uk ethnicity facts and figures, with more in the House of Commons Library briefing). In the press this becomes one line: women and non-white people are overrepresented in higher education."
-  },
-  {
-    "objectID": "post01.html#the-question",
-    "href": "post01.html#the-question",
-    "title": "Overrepresented compared to whom?",
-    "section": "The question",
-    "text": "The question\n“Overrepresented” only means something once you finish the sentence: overrepresented compared to whom? That comparison group is the benchmark, and the benchmark decides the answer. Students are young, and the young population is more ethnically diverse than the old. Compare students against the whole population and you can produce “overrepresentation” out of nothing but age. The honest comparison is against people of the same age."
-  },
-  {
-    "objectID": "post01.html#how-we-check-it",
-    "href": "post01.html#how-we-check-it",
-    "title": "Overrepresented compared to whom?",
-    "section": "How we check it",
-    "text": "How we check it\nWe use one free public source: the England and Wales 2021 census. It records both the population and whether each person holds a degree-level qualification (Level 4 or above, which covers a degree and higher). For residents aged 22 to 24, we compare each group’s share of the population with their share of the degree-level holders, region by region. If a group is a larger share of the holders than of the population, they are overrepresented, and the gap says by how much.\nTwo choices define the comparison group. Age: 22 to 24, because most people on a standard degree have finished by 22 and the band still reflects recent cohorts. Residence: about one in ten residents that age arrived in the UK within the previous five years, one in five in London. Include them and the count covers everyone now living here who holds a degree, wherever they earned it. Exclude them and it covers only people who were already here when the decision to go to university was made. The claim is about British higher education, so the main figures exclude recent arrivals. Where including them would change the answer, we say so."
-  },
-  {
-    "objectID": "post01.html#getting-the-data",
-    "href": "post01.html#getting-the-data",
-    "title": "Overrepresented compared to whom?",
-    "section": "Getting the data",
-    "text": "Getting the data\nOn the ONS Create a custom dataset tool, choose Usual residents and set Area type to Regions. Two downloads are needed.\nFirst, add Highest level of qualification, Age, Sex and Ethnic group. Set Age to the categories that include 22 to 24 and Ethnic group to 6 categories. This gives the sex panel and the unadjusted ethnicity figures.\nSecond, repeat with Length of residence in the UK in place of Sex. This gives the same table split by how long each resident has been in the country.\nThey have to be separate because ONS suppresses cells small enough to identify individuals. Asking for all five variables at once thins the table until half the regions are withheld. Five variables clear where six do not, so sex and residence are collected in turn rather than together.\nThis covers England and Wales. Scotland and Northern Ireland ran separate censuses and can be incorporated but it is unnecessary for our purposes."
-  },
-  {
-    "objectID": "post01.html#what-it-shows",
-    "href": "post01.html#what-it-shows",
-    "title": "Overrepresented compared to whom?",
-    "section": "What it shows",
-    "text": "What it shows\nThe hollow dot is each group’s share of the population, the filled dot their share of degree-level holders, and the gap between them is the over or under-representation.\n\nGender 22-24 y olds\n\n\n\nWomen are a larger share of degree-level holders than of the population in every region, by about 5 to 6 percentage points. Men are the exact mirror.\nThe sex figures come from the first download and so cover all residents. Applying the residence filter moves the women’s gap from +5.8 to +6.1 points, which changes nothing.\n\n\nEthnicity 22-24 y olds\n\n\n\nNon-white residents are a larger share of degree-level holders than of the population everywhere except London, from 2.8 points in the North to 5.1 in the Midlands, against 4.6 for England and Wales. London is the exception at -1.1.\nCounting recent arrivals too adds between 0.6 and 1.2 points, most of it in the Asian group, and moves London from -1.1 to roughly level. No group changes sign."
-  },
-  {
-    "objectID": "post01.html#and-across-age-groups",
-    "href": "post01.html#and-across-age-groups",
-    "title": "Overrepresented compared to whom?",
-    "section": "And across age groups",
-    "text": "And across age groups\nThe same comparison, now with the population share as the line and each age band placed by how far it sits above or below it. The number by each dot is that band’s share of degree holders.\n\n\nTake 22 to 24 year olds. Non-white Londoners are 47.7% of Level 4 holders against 48.8% of the population, a gap of -1.1: under-representation. Hover over the two younger positive dots to see the exact gaps.\nBut almost nobody has finished a three-year degree by 21. Only 20.2% of London 20 to 21 year olds hold anything at Level 4, against 56.3% three years later, and most of that 20% is an HNC, HND, foundation degree or higher apprenticeship rather than a first degree. Non-white Londoners lead on those routes, not on degrees.\n\n\nThe gaps for women ease toward the line with age and turn negative in all regions for the over-50s."
-  },
-  {
-    "objectID": "post01.html#what-to-keep-in-mind",
-    "href": "post01.html#what-to-keep-in-mind",
-    "title": "Overrepresented compared to whom?",
-    "section": "What to keep in mind",
-    "text": "What to keep in mind\nThe census measures who holds a degree, not who is enrolled today, and at 22 to 24 some are still studying."
-  },
-  {
-    "objectID": "post01.html#what-we-learned",
-    "href": "post01.html#what-we-learned",
-    "title": "Overrepresented compared to whom?",
-    "section": "What we learned",
-    "text": "What we learned\nFor women, the claim holds without qualification. Women aged 22 to 24 are a larger share of degree-level holders than of the resident population in every region, by roughly 5 to 6 points, and it persists in weaker form in older age bands.\nFor ethnicity, it holds in direction but not uniformly. Among residents already here five years before the census, non-white people aged 22 to 24 are overrepresented everywhere except London, where they are slightly underrepresented. The gaps run 2.8 to 5.1 points and narrow in older cohorts. Recent arrivals lift these figures, but by less than one might worry, and in London by enough to close the gap.\n\nReproducible from public data. The tables are built from the 2021 Census of England and Wales through the ONS Create a custom dataset tool, using the selections above.\nDoing it yourself. You do not need to be a programmer. With a current AI model (as of mid-2026) as your guide, install WSL on Windows, then Miniconda, Python and a few libraries; the model gives you the exact commands and fixes anything that breaks. Download the table from ONS, hand it to the model, and ask for a script that draws any visualization you want. On a Mac or Linux machine most of this is already in place."
   }
 ]

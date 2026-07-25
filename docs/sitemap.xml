@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://significantfigures.uk/post02.html</loc>
-    <lastmod>2026-07-24T16:01:15.188Z</lastmod>
+    <loc>https://significantfigures.uk/post03.html</loc>
+    <lastmod>2026-07-25T10:26:54.848Z</lastmod>
   </url>
   <url>
-    <loc>https://significantfigures.uk/index.html</loc>
-    <lastmod>2026-07-24T16:01:15.188Z</lastmod>
+    <loc>https://significantfigures.uk/post01.html</loc>
+    <lastmod>2026-07-25T11:11:06.382Z</lastmod>
   </url>
   <url>
     <loc>https://significantfigures.uk/about.html</loc>
     <lastmod>2026-07-23T10:17:10.478Z</lastmod>
   </url>
   <url>
-    <loc>https://significantfigures.uk/post01.html</loc>
+    <loc>https://significantfigures.uk/index.html</loc>
+    <lastmod>2026-07-25T10:27:44.952Z</lastmod>
+  </url>
+  <url>
+    <loc>https://significantfigures.uk/post02.html</loc>
     <lastmod>2026-07-24T16:01:15.188Z</lastmod>
   </url>
 </urlset>

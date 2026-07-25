@@ -13,3 +13,6 @@ Are women and non-white people really overrepresented in higher education? The E
 
 [**The role of the denominator**](post02.qmd)
 Stop and search disparity ratios swing widely depending on which population you divide by, holding the same seventeen years of searches fixed.
+
+[**Where the graduates go**](post03.qmd)
+Graduates enter the workforce diverse. Sector by sector, LEO data shows where representation and pay diverge afterward — and why.
