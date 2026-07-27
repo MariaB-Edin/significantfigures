@@ -30,7 +30,7 @@ Women are heavily over-represented in Health, Education and Social Care, yet und
 
 Ranked by median graduate earnings at five years out, the five highest-paying sectors are **Investment (£59K)**, **Hybrid finance (£43K)**, the **Army (£42K)**, **IT (£39K)** and **Construction (£38K)** — with the remaining finance carve-out RestFin and management consulting, just below.
 
-The disparities are not spread evenly across this ranking — they concentrate at the top. The widest women pay gaps sit in the best-paid sectors: women earn 23% below men in Investment, 27% below in Hybrid finance, and 27% below in Construction at five years out, each gap widening further by ten years. The only sectors where women reach parity or better are Hospitality, Retail and Police — all near the bottom of the pay ranking. So women are best paid, relative to men, precisely where there is least to be paid.
+The disparities are not spread evenly across this ranking — they concentrate at the top. The widest women pay gaps sit in the best-paid sectors: women earn 23% below men in Investment, 27% below in Hybrid finance, and 27% below in Construction at five years out, each gap widening further by ten years.
 
 The three finance sectors show a distinct ABMO signature: **over-represented but under-paid.** ABMO graduates are more likely than white graduates to work in Investment, Hybrid finance and RestFin — but earn slightly less within each. This is the pattern the CFA pipeline question runs into: a diverse intake reaching the industry, then losing ground on pay once inside it.
 
@@ -50,9 +50,9 @@ Every gap above is measured among graduates **in work**. That is not neutral: em
 
 **The women pay gap is partly hours.** LEO earnings are not hours-adjusted, and women are far more likely to work part-time (roughly 37% against 11% of men), so some of the women pay bars reflect hours, not the rate for the job. This is almost entirely a gender effect: part-time rates for white and ABMO workers are near-identical, so it does not explain the ABMO pay gaps.
 
-**The ABMO gaps are partly insecurity.** The mirror image: temporary work is far more common among ABMO workers — Black workers around 2.5× as likely as white to be in temporary employment — while the sex gap is small. Insecure contracts are a mechanism for the ABMO gaps in a way part-time hours are not.
+**The ABMO gaps are partly insecurity.** The mirror image: temporary work is far more common among ABMO workers — Black workers are around 2.5× as likely as white to be in temporary employment — while the sex gap is small. Insecure contracts are a mechanism for the ABMO gaps in a way part-time hours are not.
 
-Each pay gap has its own dominant confounder — hours for women, insecurity for ABMO — and neither should be applied to the other. None of this makes the gaps disappear; it tells you which lever is doing the work. We study as many additional supply and demand factors as the administrative-linked data allow in our [upcoming revision](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4503424), where factors like STEM subject choice, university prestige, distance and job flexibility close the gaps for ABMO graduates but not for women.
+Each pay gap has its own dominant confounder: hours for women, insecurity for ABMO. None of this makes the gaps disappear. We study as many additional supply and demand factors as the administrative-linked data allow in our [upcoming revision](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4503424), where factors like STEM subject choice, university prestige, distance and job flexibility close the gaps for ABMO graduates but not for women.
 
 ---
 
