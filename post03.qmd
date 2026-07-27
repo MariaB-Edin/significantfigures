@@ -24,7 +24,7 @@ The buttons switch between women and ABMO. Within each sector the four bars are 
 ```
 :::
 
-Women are heavily over-represented in Health, Education and Social Care, yet under-paid there as almost everywhere else. Across all 23 sectors at four seniority points, women are over-paid in only one: Hospitality, at 1 and 3 YAG, the sector with the absolute lowest earnings. ABMO graduates are also over-represented in Health and Social Care, though less than women, and here they are over-paid. The other sectors where ABMO graduates are over-paid at most seniority levels are Retail, Manufacturing, Media & Arts, Government, and Police — with the notable exception of the finance sectors, taken up below.
+Women are heavily over-represented in Health, Education and Social Care, yet under-paid there as almost everywhere else. Across all 23 sectors at four seniority points, women are over-paid only in Hospitality at 1 and 3 YAG, the sector with the absolute lowest earnings. ABMO graduates are also over-represented in Health and Social Care, though less than women, and here they are over-paid. The other sectors where ABMO graduates are over-paid at most seniority levels are Retail, Manufacturing, Media & Arts, Government, and Police — with the notable exception of the finance sectors, taken up below.
 
 ## High pay, low pay
 
